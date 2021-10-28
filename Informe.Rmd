@@ -30,4 +30,7 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ##Introducción
+
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.  
+
+A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte. 
