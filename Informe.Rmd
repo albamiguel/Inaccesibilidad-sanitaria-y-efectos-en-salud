@@ -42,4 +42,19 @@ El informe consta de diferentes partes, la primera de ella son los objetivos. De
 Adjuntamos el link del repositorio [aqui]  (https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud)
 
 
+## Objetivos
+
+OBJETIVO GENERAL:
+Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que
+puede provocar en la salud humana. 
+
+OBEJTIVOS ESPECÍFICOS:  
+
+  -Inaccesibilidad por motivos económicos y comunidad autónoma 
+
+  -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)  
+
+  -Inaccesibilidad y dificultades de transporte (por comunidad autónoma) 
+
+
 
