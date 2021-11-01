@@ -29,17 +29,14 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-##Introducción
+\#\#Introducción
 
-La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.  
+La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
-La **inaccesibilidad** se define como aquello que no está accesible, es decir, sin acceso o trato. 
+La **inaccesibilidad** se define como aquello que no está accesible, es decir, sin acceso o trato.
 
-A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte. 
+A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
 
-El informe consta de diferentes partes, la primera de ella son los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último la importación y el análisis de los datos, con sus correspondientes conclusiones. 
+El informe consta de diferentes partes, la primera de ella son los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último la importación y el análisis de los datos, con sus correspondientes conclusiones.
 
-Adjuntamos el link del repositorio [aqui]  (https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud)
-
-
-
+Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
