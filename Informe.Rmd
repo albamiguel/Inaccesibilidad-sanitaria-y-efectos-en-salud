@@ -37,6 +37,24 @@ La **inaccesibilidad** se define como aquello que no está accesible, es decir, 
 
 A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
 
+<<<<<<< HEAD
 El informe consta de diferentes partes, la primera de ella son los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último la importación y el análisis de los datos, con sus correspondientes conclusiones.
+=======
+## Objetivos
+
+OBJETIVO GENERAL:
+Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que
+puede provocar en la salud humana. 
+
+OBEJTIVOS ESPECÍFICOS:  
+
+  -Inaccesibilidad por motivos económicos y comunidad autónoma 
+
+  -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)  
+
+  -Inaccesibilidad y dificultades de transporte (por comunidad autónoma) 
+
+
+>>>>>>> 45af5f8a6368af3b4641d5e1639939e67de9ac58
 
 Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
