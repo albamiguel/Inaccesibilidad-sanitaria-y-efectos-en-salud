@@ -38,7 +38,7 @@ La **inaccesibilidad** se define como aquello que no está accesible, es decir, 
 A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
 
 <<<<<<< HEAD
-El informe consta de diferentes partes, la primera de ella son los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último la importación y el análisis de los datos, con sus correspondientes conclusiones.
+El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
 =======
 ## __Objetivos__
 
@@ -82,3 +82,12 @@ Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato ta
 
 Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos. 
 
+
+### __RESOLUCIÓN TEMPORAL__:
+
+Últimos 12 meses del año 2020.
+
+
+### __RESOLUCIÓN ESPACIAL__:
+
+Por comunidades autónomas.
