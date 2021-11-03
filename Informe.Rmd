@@ -29,7 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-\#\#Introducción
+\#\#__Introducción__
 
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
@@ -40,13 +40,13 @@ A través de este trabajo analizaremos algunos de los aspectos que actualmente d
 <<<<<<< HEAD
 El informe consta de diferentes partes, la primera de ella son los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último la importación y el análisis de los datos, con sus correspondientes conclusiones.
 =======
-## Objetivos
+## __Objetivos__
 
-OBJETIVO GENERAL:
+_OBJETIVO GENERAL_:
 Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que
 puede provocar en la salud humana. 
 
-OBEJTIVOS ESPECÍFICOS:  
+_OBEJTIVOS ESPECÍFICOS_:  
 
   -Inaccesibilidad por motivos económicos y comunidad autónoma 
 
@@ -58,3 +58,16 @@ OBEJTIVOS ESPECÍFICOS:
 >>>>>>> 45af5f8a6368af3b4641d5e1639939e67de9ac58
 
 Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
+
+=======
+## __Metodología__
+
+###_PROCEDENCIA DE LOS DATOS_:
+Hemos extraído los datos del Instituto Nacional de Estadística (INE).
+El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa. 
+
+Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones. 
+
+En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.  
+
+
