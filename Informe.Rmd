@@ -63,7 +63,7 @@ Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inacce
 ## __Metodología__
 
 ###_PROCEDENCIA DE LOS DATOS_:
-Hemos extraído los datos del Instituto Nacional de Estadística (INE).
+Hemos extraído los datos del __Instituto Nacional de Estadística (INE)__.
 El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa. 
 
 Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones. 
@@ -71,3 +71,12 @@ Está encargado de producir información estadística de la más alta calidad ac
 En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.  
 
 
+### __DESCRIPCIÓN DEL SET DE DATOS__:  
+
+Los sets de datos que hemos empleado son de tipo _.csv_.
+
+El formato _.csv_ (“*Comma Separated Values*") son archivos de texto en los cuales los caracteres están separados por comas, dando lugar a una especie de tabla en forma de filas y columnas. Las columnas quedan definidas por cada punto y coma (;), mientras que cada fila se define mediante una línea adicional en el texto.  
+
+Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato tabla, sin que ello conlleve sobrecoste computacional alguno, por eso mismo hemos considerado que es el más eficiente para llevar a cabo la importación de datos. 
+
+Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos. 
