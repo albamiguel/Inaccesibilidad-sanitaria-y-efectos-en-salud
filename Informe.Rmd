@@ -82,12 +82,3 @@ Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato ta
 
 Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos. 
 
-
-### __RESOLUCIÓN TEMPORAL__:
-
-Últimos 12 meses del año 2020.
-
-
-### __RESOLUCIÓN ESPACIAL__:
-
-Por comunidades autónomas.
