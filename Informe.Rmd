@@ -29,7 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-##__Introducción__
+\#\#**Introducción**
 
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
@@ -41,50 +41,42 @@ El informe consta de diferentes partes. En primer lugar, presentaremos los objet
 
 Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
 
+## **Objetivos**
 
-## __Objetivos__
+*OBJETIVO GENERAL*: Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
 
-_OBJETIVO GENERAL_:
-Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que
-puede provocar en la salud humana. 
+*OBEJTIVOS ESPECÍFICOS*:
 
-_OBEJTIVOS ESPECÍFICOS_:  
+-Inaccesibilidad por motivos económicos y comunidad autónoma
 
-  -Inaccesibilidad por motivos económicos y comunidad autónoma 
+-Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)
 
-  -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)  
+-Inaccesibilidad y dificultades de transporte (por comunidad autónoma)
 
-  -Inaccesibilidad y dificultades de transporte (por comunidad autónoma) 
+## **Metodología**
 
+\#\#\#*PROCEDENCIA DE LOS DATOS*:
 
-## __Metodología__
+Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.
 
-###_PROCEDENCIA DE LOS DATOS_:
+Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones.
 
-Hemos extraído los datos del __Instituto Nacional de Estadística (INE)__.
-El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa. 
+En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.
 
-Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones. 
+### **DESCRIPCIÓN DEL SET DE DATOS**:
 
-En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.  
+Los sets de datos que hemos empleado son de tipo *.csv*.
 
+El formato *.csv* ("*Comma Separated Values*") son archivos de texto en los cuales los caracteres están separados por comas, dando lugar a una especie de tabla en forma de filas y columnas. Las columnas quedan definidas por cada punto y coma (;), mientras que cada fila se define mediante una línea adicional en el texto.
 
-### __DESCRIPCIÓN DEL SET DE DATOS__:  
+Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato tabla, sin que ello conlleve sobrecoste computacional alguno, por eso mismo hemos considerado que es el más eficiente para llevar a cabo la importación de datos.
 
-Los sets de datos que hemos empleado son de tipo _.csv_.
+Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos.
 
-El formato _.csv_ (“*Comma Separated Values*") son archivos de texto en los cuales los caracteres están separados por comas, dando lugar a una especie de tabla en forma de filas y columnas. Las columnas quedan definidas por cada punto y coma (;), mientras que cada fila se define mediante una línea adicional en el texto.  
-
-Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato tabla, sin que ello conlleve sobrecoste computacional alguno, por eso mismo hemos considerado que es el más eficiente para llevar a cabo la importación de datos. 
-
-Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos. 
-
-
-### __RESOLUCIÓN TEMPORAL__:
+### **RESOLUCIÓN TEMPORAL**:
 
 Últimos 12 meses del año 2020.
 
-
-### __RESOLUCIÓN ESPACIAL__:
+### **RESOLUCIÓN ESPACIAL**:
 
 Por comunidades autónomas.
