@@ -29,7 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-\#\#__Introducción__
+##__Introducción__
 
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
@@ -37,9 +37,11 @@ La **inaccesibilidad** se define como aquello que no está accesible, es decir, 
 
 A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
 
-<<<<<<< HEAD
 El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
-=======
+
+Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
+
+
 ## __Objetivos__
 
 _OBJETIVO GENERAL_:
@@ -55,11 +57,6 @@ _OBEJTIVOS ESPECÍFICOS_:
   -Inaccesibilidad y dificultades de transporte (por comunidad autónoma) 
 
 
->>>>>>> 45af5f8a6368af3b4641d5e1639939e67de9ac58
-
-Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
-
-=======
 ## __Metodología__
 
 ###_PROCEDENCIA DE LOS DATOS_:
