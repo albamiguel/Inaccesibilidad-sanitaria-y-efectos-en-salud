@@ -29,7 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-\#\#**Introducción**
+##**Introducción**
 
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
@@ -55,7 +55,7 @@ Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inacce
 
 ## **Metodología**
 
-\#\#\#*PROCEDENCIA DE LOS DATOS*:
+###*PROCEDENCIA DE LOS DATOS*:
 
 Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.
 
@@ -79,9 +79,8 @@ Pero, antes de nada tenemos que importar el paquete readr, que se trata de una h
 
 ### **RESOLUCIÓN ESPACIAL**:
 
-<<<<<<< HEAD
 Por comunidades autónomas.
-=======
+
 ### __RESOLUCIÓN ESPACIAL__:
 
 Por comunidades autónomas.
@@ -99,4 +98,4 @@ Por comunidades autónomas.
   -Inaccesibilidad y dificultades de transporte (por comunidad autónoma):
    https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0 
   
->>>>>>> 83757be548130ca38ce38252d260acc089b72e1d
+
