@@ -79,4 +79,24 @@ Pero, antes de nada tenemos que importar el paquete readr, que se trata de una h
 
 ### **RESOLUCIÓN ESPACIAL**:
 
+<<<<<<< HEAD
 Por comunidades autónomas.
+=======
+### __RESOLUCIÓN ESPACIAL__:
+
+Por comunidades autónomas.
+
+### __HERRAMIENTAS UTILIZADAS__:
+
+### __DATOS__:
+
+  -Inaccesibilidad por motivos económicos y comunidad autónoma:
+   https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0 
+  
+  -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma): 
+   https://www.ine.es/jaxi/Datos.htm?tpx=21856 
+  
+  -Inaccesibilidad y dificultades de transporte (por comunidad autónoma):
+   https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0 
+  
+>>>>>>> 83757be548130ca38ce38252d260acc089b72e1d
