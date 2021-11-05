@@ -91,6 +91,19 @@ Por comunidades autónomas.
 
   -Inaccesibilidad por motivos económicos y comunidad autónoma:
    https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0 
+   
+    
+    library(readr)
+    X05016 <- read_delim("05016.csv", 
+          delim = ";", escape_double = FALSE, trim_ws = TRUE)
+    View(X05016)
+   
+    
+    
+
+      
+  
+  
   
   -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma): 
    https://www.ine.es/jaxi/Datos.htm?tpx=21856 
