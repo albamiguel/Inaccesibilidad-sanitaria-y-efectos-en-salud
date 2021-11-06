@@ -39,7 +39,7 @@ A través de este trabajo analizaremos algunos de los aspectos que actualmente d
 
 El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
 
-Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
+Adjuntamos el link del[repositorio](<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
 
 ## **Objetivos**
 
@@ -57,7 +57,7 @@ Adjuntamos el link del repositorio [aqui] (<https://github.com/albamiguel/Inacce
 
 ###*PROCEDENCIA DE LOS DATOS*:
 
-Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.
+Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aqui](https://www.ine.es/index.htm)
 
 Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones.
 
@@ -90,25 +90,18 @@ Por comunidades autónomas.
 ### __DATOS__:
 
   -Inaccesibilidad por motivos económicos y comunidad autónoma:
-   https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0 
-   
     
     library(readr)
     X05016 <- read_delim("05016.csv", 
           delim = ";", escape_double = FALSE, trim_ws = TRUE)
     View(X05016)
    
-    
-    
-
-      
-  
-  
-  
   -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma): 
-   https://www.ine.es/jaxi/Datos.htm?tpx=21856 
+
   
-  -Inaccesibilidad y dificultades de transporte (por comunidad autónoma):
-   https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0 
-  
+  -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
+
+library(readr)
+Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_ <- read_csv("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv")
+View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_)
 
