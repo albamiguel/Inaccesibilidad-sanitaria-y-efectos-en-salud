@@ -89,14 +89,15 @@ Por comunidades autónomas.
 
 ### __DATOS__:
 
-  -Inaccesibilidad por motivos económicos y comunidad autónoma:
-    
-    library(readr)
-    X05016 <- read_delim("05016.csv", 
-          delim = ";", escape_double = FALSE, trim_ws = TRUE)
-    View(X05016)
+  -**Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
+  
+   library(readr)
+   Inaccesibilidad_por_motivos_economicos <-
+   read_delim("DATOS/Inaccesibilidad por motivos economicos.csv", 
+   delim = ";", escape_double = FALSE, trim_ws = TRUE)
+   View(Inaccesibilidad_por_motivos_economicos)
    
-  -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma): 
+  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
@@ -104,4 +105,6 @@ Por comunidades autónomas.
 library(readr)
 Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_ <- read_csv("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv")
 View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_)
+
+
 
