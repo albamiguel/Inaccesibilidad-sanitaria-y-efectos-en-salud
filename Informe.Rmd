@@ -103,8 +103,9 @@ Por comunidades autónomas.
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
 library(readr)
-Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_ <- read_csv("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv")
-View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autónoma_)
-
+Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_ <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv", 
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+    
+View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_)
 
 
