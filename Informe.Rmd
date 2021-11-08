@@ -123,13 +123,7 @@ Muerte_inaccesibilidad %>%
 
 Correlacion_muerte_inaccesibilidad
 
-x11()
-Correlacion_muerte_inaccesibilidad %>% 
-  ggplot(data = ., mapping = aes(x = `Sí o no` , y = Total.x)) +
-  geom_point(na.rm = TRUE) +
-  labs(x = "Sí inaccesibilidad / No inaccesibilidad", y = "Total de muertes", 
-       subtitle = "Correlación entre número de muertes e inaccesibilidad sanitaria") +
-  theme_classic()
+
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
