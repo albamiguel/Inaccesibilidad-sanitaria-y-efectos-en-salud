@@ -96,6 +96,11 @@ Para trabajar con datos de Excel en R debemos usar un paquete desarrollado para 
 Por comunidades autónomas.
 
 
+### **POBLACIÓN**:
+
+Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
+
+
 ### __HERRAMIENTAS UTILIZADAS__:
 
 ### __DATOS__:
