@@ -81,9 +81,6 @@ Pero, antes de nada tenemos que importar el paquete readr, que se trata de una h
 
 Por comunidades autónomas.
 
-### __RESOLUCIÓN ESPACIAL__:
-
-Por comunidades autónomas.
 
 ### __HERRAMIENTAS UTILIZADAS__:
 
