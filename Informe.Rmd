@@ -95,6 +95,7 @@ Por comunidades autónomas.
    View(Inaccesibilidad_por_motivos_economicos)
    
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+
 library(tidyverse)
 
 
@@ -132,11 +133,10 @@ Correlacion_muerte_inaccesibilidad %>%
   theme_classic()
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
-
+  
 library(readr)
-Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_ <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv", 
+Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
-    
-View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_)
+View(Inaccesibilidad_y_dificultades_de_transporte)
 
 
