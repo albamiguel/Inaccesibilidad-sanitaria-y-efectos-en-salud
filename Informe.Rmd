@@ -83,7 +83,9 @@ Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato ta
 
 Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos.
 
-Por otro lado, el otro tipo de set de datos que hemos utilizado es formato excel
+Por otro lado, el otro tipo de set de datos que hemos utilizado es formato Excel.Es una hoja de cálculo desarrollada por Microsoft, que permite administrar los datos de una manera muy simple. 
+
+Para trabajar con datos de Excel en R debemos usar un paquete desarrollado para tal fin (readxl).
 
 ### **RESOLUCIÓN TEMPORAL**:
 
