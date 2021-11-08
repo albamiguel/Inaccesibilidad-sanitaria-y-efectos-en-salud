@@ -55,7 +55,7 @@ Adjuntamos el link del [repositorio](<https://github.com/albamiguel/Inaccesibili
 
 ## **Metodología**
 
-### *PROCEDENCIA DE LOS DATOS*:
+### **PROCEDENCIA DE LOS DATOS**:
 
 Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aqui](https://www.ine.es/index.htm)
 
@@ -96,6 +96,9 @@ Por comunidades autónomas.
    
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
+library(readxl)
+Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
+View(Muerte_inaccesibilidad)
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
