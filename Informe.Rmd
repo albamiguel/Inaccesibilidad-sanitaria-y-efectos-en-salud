@@ -99,6 +99,9 @@ Por comunidades autónomas.
    
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
+library(readxl)
+Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
+View(Muerte_inaccesibilidad)
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
