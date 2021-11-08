@@ -29,7 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-##**Introducción**
+## **Introducción**
 
 La accesibilidad a la asistencia sanitaria es fundamental para garantizar la equidad del sistema sanitario. Los pacientes deben de recibir una atención oportuna, rápida y adecuada a sus condiciones de salud.
 
@@ -39,7 +39,7 @@ A través de este trabajo analizaremos algunos de los aspectos que actualmente d
 
 El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
 
-Adjuntamos el link del[repositorio](<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
+Adjuntamos el link del [repositorio](<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
 
 ## **Objetivos**
 
@@ -55,7 +55,7 @@ Adjuntamos el link del[repositorio](<https://github.com/albamiguel/Inaccesibilid
 
 ## **Metodología**
 
-###*PROCEDENCIA DE LOS DATOS*:
+### *PROCEDENCIA DE LOS DATOS*:
 
 Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aqui](https://www.ine.es/index.htm)
 
