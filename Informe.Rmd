@@ -1,5 +1,5 @@
 ---
-title: "Informe R Markdown"
+title: "Informe-Inaccesibilidad sanitaria y salud"
 author: "Lorena González, Alba Miguel, Noelia Pérez"
 date: "27/10/2021"
 output: html_document
