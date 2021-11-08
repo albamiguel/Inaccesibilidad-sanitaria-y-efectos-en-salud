@@ -213,6 +213,13 @@ pre code {
 <p>Hemos extraído los datos del <strong>Instituto Nacional de Estadística (INE)</strong>. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver <a href="https://www.ine.es/index.htm">aqui</a></p>
 <p>Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones.</p>
 <p>En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.</p>
+<p><em>Datos</em>:</p>
+<ul>
+<li><p><a href="https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&amp;file=05016.px&amp;L=0">Inaccesibilidad por motivos económicos</a></p></li>
+<li><p><a href="https://www.ine.es/jaxi/Datos.htm?tpx=21856">Defunciones por comunidad autónoma</a></p></li>
+<li><p><a href="https://www.ine.es/jaxi/Tabla.htm?path=/t15/p419/a2017/p02/l0/&amp;file=05004.px&amp;L=0">Demora excesiva o inaccesibilidad a la asistencia médica</a></p></li>
+<li><p><a href="https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&amp;file=05010.px&amp;L=0">Inaccesibilidad por dificultades con el transporte</a></p></li>
+</ul>
 </div>
 <div id="descripción-del-set-de-datos" class="section level3">
 <h3><strong>DESCRIPCIÓN DEL SET DE DATOS</strong>:</h3>
@@ -236,7 +243,8 @@ pre code {
 <h3><strong>DATOS</strong>:</h3>
 <p>-<strong>Inaccesibilidad por motivos económicos (por comunidad autónoma)</strong>:</p>
 <p>library(readr) Inaccesibilidad_por_motivos_economicos &lt;- read_delim(“DATOS/Inaccesibilidad por motivos economicos.csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE) View(Inaccesibilidad_por_motivos_economicos)</p>
-<p>-<strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>: library(tidyverse)</p>
+<p>-<strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</p>
+<p>library(tidyverse)</p>
 <p>library(readxl) Muerte_inaccesibilidad &lt;- read_excel(“DATOS/Muerte_inaccesibilidad.xlsx”) View(Muerte_inaccesibilidad)</p>
 <p>Muerte_inaccesibilidad %&gt;% select(<code>Comunidad autónoma de residencia del fallecido</code>, Total_muertes = Total)</p>
 <p>library(readxl) inaccesibilidad_comunidades &lt;- read_excel(“DATOS/inaccesibilidad_comunidades.xlsx”) View(inaccesibilidad_comunidades)</p>
@@ -245,8 +253,7 @@ pre code {
 <p>Correlacion_muerte_inaccesibilidad</p>
 <p>x11() Correlacion_muerte_inaccesibilidad %&gt;% ggplot(data = ., mapping = aes(x = <code>Sí o no</code> , y = Total.x)) + geom_point(na.rm = TRUE) + labs(x = “Sí inaccesibilidad / No inaccesibilidad”, y = “Total de muertes”, subtitle = “Correlación entre número de muertes e inaccesibilidad sanitaria”) + theme_classic()</p>
 <p>-<strong>Inaccesibilidad y dificultades de transporte (por comunidad autónoma)</strong>:</p>
-<p>library(readr) Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_ &lt;- read_delim(“DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE)</p>
-<p>View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_)</p>
+<p>library(readr) Inaccesibilidad_y_dificultades_de_transporte &lt;- read_delim(“DATOS/Inaccesibilidad y dificultades de transporte.csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE) View(Inaccesibilidad_y_dificultades_de_transporte)</p>
 </div>
 </div>
 
