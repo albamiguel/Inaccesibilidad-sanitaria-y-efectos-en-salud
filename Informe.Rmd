@@ -63,15 +63,27 @@ Está encargado de producir información estadística de la más alta calidad ac
 
 En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.
 
-### **DESCRIPCIÓN DEL SET DE DATOS**:
+**Datos**: 
 
-Los sets de datos que hemos empleado son de tipo *.csv*.
+- [Inaccesibilidad por motivos económicos](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0)
+
+- [Defunciones por comunidad autónoma](https://www.ine.es/jaxi/Datos.htm?tpx=21856)
+
+- [Demora excesiva o inaccesibilidad a la asistencia médica](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p419/a2017/p02/l0/&file=05004.px&L=0)
+
+- [Inaccesibilidad por dificultades con el transporte](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0)
+
+### **DESCRIPCIÓN DEL SET DE DATOS**:
+ 
+Por un lado, los sets de datos que hemos empleado son de tipo *.csv*.
 
 El formato *.csv* ("*Comma Separated Values*") son archivos de texto en los cuales los caracteres están separados por comas, dando lugar a una especie de tabla en forma de filas y columnas. Las columnas quedan definidas por cada punto y coma (;), mientras que cada fila se define mediante una línea adicional en el texto.
 
 Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato tabla, sin que ello conlleve sobrecoste computacional alguno, por eso mismo hemos considerado que es el más eficiente para llevar a cabo la importación de datos.
 
 Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos.
+
+Por otro lado, el otro tipo de set de datos que hemos utilizado es formato excel
 
 ### **RESOLUCIÓN TEMPORAL**:
 
