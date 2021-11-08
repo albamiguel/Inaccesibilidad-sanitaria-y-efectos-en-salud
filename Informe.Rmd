@@ -97,12 +97,13 @@ Por comunidades autónomas.
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 library(tidyverse)
 
+
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
 
 Muerte_inaccesibilidad %>%
-  select(`Comunidad autónoma de residencia del fallecido`, Total)
+  select(`Comunidad autónoma de residencia del fallecido`, Total_muertes = Total)
 
 library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
@@ -111,12 +112,24 @@ View(inaccesibilidad_comunidades)
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
   
+Correlacion_muerte_inaccesibilidad <-
 Muerte_inaccesibilidad %>% 
   select(`Comunidad autónoma de residencia del fallecido`, Total) %>% 
   full_join(x = ., 
             y = inaccesibilidad_comunidades %>% 
               select(`Comunidad autónoma`, `Sí o no`, Total),
             by = c("Comunidad autónoma de residencia del fallecido" = "Comunidad autónoma"))
+            
+
+Correlacion_muerte_inaccesibilidad
+
+x11()
+Correlacion_muerte_inaccesibilidad %>% 
+  ggplot(data = ., mapping = aes(x = `Sí o no` , y = Total.x)) +
+  geom_point(na.rm = TRUE) +
+  labs(x = "Sí inaccesibilidad / No inaccesibilidad", y = "Total de muertes", 
+       subtitle = "Correlación entre número de muertes e inaccesibilidad sanitaria") +
+  theme_classic()
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
