@@ -95,10 +95,28 @@ Por comunidades autónomas.
    View(Inaccesibilidad_por_motivos_economicos)
    
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+library(tidyverse)
 
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
+
+Muerte_inaccesibilidad %>%
+  select(`Comunidad autónoma de residencia del fallecido`, Total)
+
+library(readxl)
+inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
+View(inaccesibilidad_comunidades)
+
+inaccesibilidad_comunidades %>%
+  select(`Comunidad autónoma`, `Sí o no`, Total)
+  
+Muerte_inaccesibilidad %>% 
+  select(`Comunidad autónoma de residencia del fallecido`, Total) %>% 
+  full_join(x = ., 
+            y = inaccesibilidad_comunidades %>% 
+              select(`Comunidad autónoma`, `Sí o no`, Total),
+            by = c("Comunidad autónoma de residencia del fallecido" = "Comunidad autónoma"))
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
