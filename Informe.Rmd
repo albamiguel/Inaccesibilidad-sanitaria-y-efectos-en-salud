@@ -157,6 +157,7 @@ Resultado_final %>%
   theme_classic()
   
   
+  
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
 
 library(readr)
