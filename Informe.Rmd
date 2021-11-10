@@ -98,31 +98,23 @@ Por comunidades autónomas.
 
 library(tidyverse)
 
-# Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia
-# Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
 
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
 
-# Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
 
 Muerte_inaccesibilidad %>%
   select(`Comunidad autónoma de residencia del fallecido`, Total_muertes = Total)
-
-# Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
-# Sexo/ Comunidad autónoma / Sí o no / Total
 
 library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
 View(inaccesibilidad_comunidades)
 
-# Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
 
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
 
-# Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad"
 
 Correlacion_muerte_inaccesibilidad <-
 Muerte_inaccesibilidad %>% 
@@ -131,22 +123,16 @@ Muerte_inaccesibilidad %>%
             y = inaccesibilidad_comunidades %>% 
               select(`Comunidad autónoma`, `Sí o no`, Total),
             by = c("Comunidad autónoma de residencia del fallecido" = "Comunidad autónoma"))
-            
-# Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:
+          
 
 Correlacion_muerte_inaccesibilidad
 table(Correlacion_muerte_inaccesibilidad$`Sí o no`)
-
-# Como en nuestro set de datos, no se especifica cuál es la diferencia entre "No" y "No necesitó asistencia", hemos dado por hecho que "No necesitó asistencia" implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única ("No"):
 
 Resultado_final <- Correlacion_muerte_inaccesibilidad %>% 
   mutate(`Sí o no` = factor(`Sí o no`, labels = c("No", "No", "Sí", "Total"))) %>% 
   filter(`Sí o no` != "Total")
   
 x11()
-
-# Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
-
 Resultado_final %>% 
   drop_na() %>% 
   ggplot(data = ., mapping = aes(x = `Sí o no` , y = Total.x)) +
@@ -155,7 +141,6 @@ Resultado_final %>%
   labs(x = "Sí inaccesibilidad / No inaccesibilidad", y = "Total de muertes", 
        subtitle = "Correlación entre número de muertes e inaccesibilidad sanitaria") +
   theme_classic()
-  
   
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
