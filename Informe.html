@@ -209,7 +209,7 @@ pre code {
 <div id="metodología" class="section level2">
 <h2><strong>Metodología</strong></h2>
 <div id="procedencia-de-los-datos" class="section level3">
-<h3><em>PROCEDENCIA DE LOS DATOS</em>:</h3>
+<h3><strong>PROCEDENCIA DE LOS DATOS</strong>:</h3>
 <p>Hemos extraído los datos del <strong>Instituto Nacional de Estadística (INE)</strong>. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver <a href="https://www.ine.es/index.htm">aqui</a></p>
 <p>Está encargado de producir información estadística de la más alta calidad acerca de numerosos ámbitos como la economía, la sociedad y el medio ambiente, entre otros, para favorecer así la correcta toma de decisiones.</p>
 <p>En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.</p>
@@ -237,6 +237,7 @@ pre code {
 <p>-<strong>Inaccesibilidad por motivos económicos (por comunidad autónoma)</strong>:</p>
 <p>library(readr) Inaccesibilidad_por_motivos_economicos &lt;- read_delim(“DATOS/Inaccesibilidad por motivos economicos.csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE) View(Inaccesibilidad_por_motivos_economicos)</p>
 <p>-<strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</p>
+<p>library(readxl) Muerte_inaccesibilidad &lt;- read_excel(“DATOS/Muerte_inaccesibilidad.xlsx”) View(Muerte_inaccesibilidad)</p>
 <p>-<strong>Inaccesibilidad y dificultades de transporte (por comunidad autónoma)</strong>:</p>
 <p>library(readr) Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_ &lt;- read_delim(“DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE)</p>
 <p>View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_)</p>
