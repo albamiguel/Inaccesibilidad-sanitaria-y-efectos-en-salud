@@ -63,15 +63,29 @@ Está encargado de producir información estadística de la más alta calidad ac
 
 En este sitio web hemos encontrado una gran cantidad de información estadística de libre acceso (OA), en diversidad de formatos.
 
-### **DESCRIPCIÓN DEL SET DE DATOS**:
+**Datos**: 
 
-Los sets de datos que hemos empleado son de tipo *.csv*.
+- [Inaccesibilidad por motivos económicos](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0)
+
+- [Defunciones por comunidad autónoma](https://www.ine.es/jaxi/Datos.htm?tpx=21856)
+
+- [Demora excesiva o inaccesibilidad a la asistencia médica](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p419/a2017/p02/l0/&file=05004.px&L=0)
+
+- [Inaccesibilidad por dificultades con el transporte](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0)
+
+### **DESCRIPCIÓN DEL SET DE DATOS**:
+ 
+Por un lado, los sets de datos que hemos empleado son de tipo *.csv*.
 
 El formato *.csv* ("*Comma Separated Values*") son archivos de texto en los cuales los caracteres están separados por comas, dando lugar a una especie de tabla en forma de filas y columnas. Las columnas quedan definidas por cada punto y coma (;), mientras que cada fila se define mediante una línea adicional en el texto.
 
 Los archivos *.csv* sirven para manejar una gran cantidad de datos en formato tabla, sin que ello conlleve sobrecoste computacional alguno, por eso mismo hemos considerado que es el más eficiente para llevar a cabo la importación de datos.
 
 Pero, antes de nada tenemos que importar el paquete readr, que se trata de una herramienta que permite trabajar con los ficheros de datos.
+
+Por otro lado, el otro tipo de set de datos que hemos utilizado es formato Excel.Es una hoja de cálculo desarrollada por Microsoft, que permite administrar los datos de una manera muy simple. 
+
+Para trabajar con datos de Excel en R debemos usar un paquete desarrollado para tal fin (readxl).
 
 ### **RESOLUCIÓN TEMPORAL**:
 
@@ -80,6 +94,11 @@ Pero, antes de nada tenemos que importar el paquete readr, que se trata de una h
 ### **RESOLUCIÓN ESPACIAL**:
 
 Por comunidades autónomas.
+
+
+### **POBLACIÓN**:
+
+Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
 
 
 ### __HERRAMIENTAS UTILIZADAS__:
@@ -94,6 +113,9 @@ Por comunidades autónomas.
    delim = ";", escape_double = FALSE, trim_ws = TRUE)
    View(Inaccesibilidad_por_motivos_economicos)
    
+
+  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**:
 
 library(tidyverse)
@@ -144,11 +166,10 @@ Resultado_final %>%
   
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
-
+  
 library(readr)
-Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_ <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte (por comunidad autónoma).csv", 
+Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
-    
-View(Inaccesibilidad_y_dificultades_de_transporte_por_comunidad_autÃ³noma_)
+View(Inaccesibilidad_y_dificultades_de_transporte)
 
 
