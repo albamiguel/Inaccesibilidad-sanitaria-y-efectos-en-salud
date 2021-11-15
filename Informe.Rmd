@@ -187,12 +187,12 @@ spec(Inaccesibilidad_y_dificultades_de_transporte)
 summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 
-#Nuestro set de datos esta compuesto por 4 variables:
+#Nuestro set de datos esta compuesto por 4 columnas:
 - **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
 
 - **Comunidad autonónoma**: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
 
 - **Si o No**: compuesto por 300 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
 
-- **Total**:
+- **Total**: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta. 
 
