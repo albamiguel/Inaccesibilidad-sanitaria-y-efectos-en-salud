@@ -116,8 +116,6 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
-  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**:
-
 library(tidyverse)
 
 # Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia
@@ -173,9 +171,30 @@ Resultado_final %>%
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
+#Importamos el set de datos
 library(readr)
 Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
 View(Inaccesibilidad_y_dificultades_de_transporte)
 
+#ANÁLISIS DE LOS DATOS:
+
+#Obtenemos el núemro de columnas que tiene:
+str(Inaccesibilidad_y_dificultades_de_transporte)
+#Especificamos de que tipo son:
+spec(Inaccesibilidad_y_dificultades_de_transporte)
+#Obtenemos resumen de los resultados
+summary(Inaccesibilidad_y_dificultades_de_transporte)
+
+
+#Nuestro set de datos esta compuesto por 4 variables:
+- **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
+
+- **Comunidad autonónoma**: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
+
+- **Si o No**:
+
+- **Total**:
+
+spec(Inaccesibilidad_y_dificultades_de_transporte)
 
