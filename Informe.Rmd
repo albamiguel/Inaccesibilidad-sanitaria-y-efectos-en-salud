@@ -107,12 +107,23 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
   -**Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
   
+# Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma.
+
+  
    library(readr)
    Inaccesibilidad_por_motivos_economicos <-
    read_delim("DATOS/Inaccesibilidad por motivos economicos.csv", 
    delim = ";", escape_double = FALSE, trim_ws = TRUE)
    View(Inaccesibilidad_por_motivos_economicos)
    
+# Analisis de los datos   
+
+# Obtenemos el numero de columnas que tiene:
+  str(Inaccesibilidad_por_motivos_economicos)
+# Especificamos de que tipo son:
+  spec(Inaccesibilidad_por_motivos_economicos)
+# Obtenemos resumen de los resultados
+  summary(Inaccesibilidad_por_motivos_economicos)
 
   -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
