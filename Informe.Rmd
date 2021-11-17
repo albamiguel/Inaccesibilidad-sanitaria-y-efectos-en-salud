@@ -119,10 +119,16 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 library(tidyverse)
 
 # Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia
+
 # Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
+
+#Vista general
+summary(Muerte_inaccesibilidad)
+str(Muerte_inaccesibilidad)
+
 
 # Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
 Muerte_inaccesibilidad %>%
@@ -134,10 +140,14 @@ library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
 View(inaccesibilidad_comunidades)
 
+#Vista general
+summary(inaccesibilidad_comunidades)
+str(inaccesibilidad_comunidades)
+
 # Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
-
+  
 # Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad"
 Correlacion_muerte_inaccesibilidad <-
 Muerte_inaccesibilidad %>% 
