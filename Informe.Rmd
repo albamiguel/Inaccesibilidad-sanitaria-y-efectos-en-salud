@@ -206,3 +206,20 @@ summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 - **Total**: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta. 
 
+# Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
+Inaccesibilidad_y_dificultades_de_transporte %>%
+  select(`Comunidad autónoma`, `Sí o no`, Total)
+  
+#**Realizamos los GRÁFICOS**:
+
+#Importamos los paquetes:
+
+library(ggplot2)
+library(tidyverse)
+
+
+ggplot(data = ., mapping= aes(x = `Comunidad autónoma`, y = `Sí o no`)) +
+  geom_point(colour = "blue")
+
+
+
