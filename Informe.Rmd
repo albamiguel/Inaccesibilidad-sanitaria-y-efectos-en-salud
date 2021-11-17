@@ -105,9 +105,9 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ### __DATOS__:
 
-  -**Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
+### **Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
   
-# Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma.
+- **Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma **.
 
   
    library(readr)
@@ -116,22 +116,24 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
    delim = ";", escape_double = FALSE, trim_ws = TRUE)
    View(Inaccesibilidad_por_motivos_economicos)
    
-# Analisis de los datos   
+### Analisis de los datos   
 
-# Obtenemos el numero de columnas que tiene:
+- **Obtenemos el numero de columnas que tiene**:
   str(Inaccesibilidad_por_motivos_economicos)
-# Especificamos de que tipo son:
+  
+- **Especificamos de que tipo son:**
   spec(Inaccesibilidad_por_motivos_economicos)
-# Obtenemos resumen de los resultados
+  
+- **Obtenemos resumen de los resultados:**
   summary(Inaccesibilidad_por_motivos_economicos)
 
-  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
-library(tidyverse)
+    library(tidyverse)
 
-# Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia
+- **Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia.**
 
-# Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
+##### Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
@@ -198,17 +200,17 @@ Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilida
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
 View(Inaccesibilidad_y_dificultades_de_transporte)
 
-#ANÁLISIS DE LOS DATOS:
+# ANÁLISIS DE LOS DATOS:
 
-#Obtenemos el núemro de columnas que tiene:
+# Obtenemos el núemro de columnas que tiene:
 str(Inaccesibilidad_y_dificultades_de_transporte)
-#Especificamos de que tipo son:
+# Especificamos de que tipo son:
 spec(Inaccesibilidad_y_dificultades_de_transporte)
-#Obtenemos resumen de los resultados
+# Obtenemos resumen de los resultados
 summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 
-#Nuestro set de datos esta compuesto por 4 columnas:
+# Nuestro set de datos esta compuesto por 4 columnas:
 - **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
 
 - **Comunidad autonónoma**: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
