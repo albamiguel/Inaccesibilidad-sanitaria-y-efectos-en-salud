@@ -118,46 +118,55 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
    
 ### Analisis de los datos   
 
-- **Obtenemos el numero de columnas que tiene**:
-  str(Inaccesibilidad_por_motivos_economicos)
+- Obtenemos el numero de columnas que tiene:
+
+str(Inaccesibilidad_por_motivos_economicos)
   
-- **Especificamos de que tipo son:**
-  spec(Inaccesibilidad_por_motivos_economicos)
+- Especificamos de que tipo son:
+
+spec(Inaccesibilidad_por_motivos_economicos)
   
-- **Obtenemos resumen de los resultados:**
+- Obtenemos resumen de los resultados:
+
   summary(Inaccesibilidad_por_motivos_economicos)
 
-### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
     library(tidyverse)
 
 - **Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia.**
 
-##### Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
+Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
+
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
 
-#Vista general
+Vista general:
+
 summary(Muerte_inaccesibilidad)
 str(Muerte_inaccesibilidad)
 
 
-# Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
+Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
+
 Muerte_inaccesibilidad %>%
   select(`Comunidad autónoma de residencia del fallecido`, Total_muertes = Total)
 
-# Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
+Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
+
 # Sexo/ Comunidad autónoma / Sí o no / Total
 library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
 View(inaccesibilidad_comunidades)
 
-#Vista general
+Vista general:
+
 summary(inaccesibilidad_comunidades)
 str(inaccesibilidad_comunidades)
 
-# Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
+
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
   
@@ -194,7 +203,8 @@ Resultado_final %>%
   
   -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
-#Importamos el set de datos
+Importamos el set de datos:
+
 library(readr)
 Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
@@ -202,15 +212,21 @@ View(Inaccesibilidad_y_dificultades_de_transporte)
 
 # ANÁLISIS DE LOS DATOS:
 
-# Obtenemos el núemro de columnas que tiene:
-str(Inaccesibilidad_y_dificultades_de_transporte)
-# Especificamos de que tipo son:
-spec(Inaccesibilidad_y_dificultades_de_transporte)
-# Obtenemos resumen de los resultados
-summary(Inaccesibilidad_y_dificultades_de_transporte)
+ - Obtenemos el núemro de columnas que tiene:
+  
+  str(Inaccesibilidad_y_dificultades_de_transporte)
+  
+ - Especificamos de que tipo son:
+
+  spec(Inaccesibilidad_y_dificultades_de_transporte)
+
+ -Obtenemos resumen de los resultados:
+ 
+  summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 
 # Nuestro set de datos esta compuesto por 4 columnas:
+
 - **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
 
 - **Comunidad autonónoma**: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
@@ -219,37 +235,31 @@ summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 - **Total**: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta. 
 
-# Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
-Correlacion_transporte_inaccesibilidad <-
-Inaccesibilidad_y_dificultades_de_transporte %>%
+library(tidyverse)
+
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
+
+Inaccesibilidad_transporte <-  
+  Inaccesibilidad_y_dificultades_de_transporte %>% 
   select(`Comunidad autónoma`, `Sí o no`, Total)
+  
+Inaccesibilidad_transporte
   
 #**Realizamos los GRÁFICOS**:
 
-#Importamos los paquetes:
+#Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
 
-library(ggplot2)
-library(tidyverse)
-
-# Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:
-
-Correlacion_transporte_inaccesibilidad
-table(Correlacion_transporte_inaccesibilidad$`Sí o no`)
-
-#
-
-Resultado_final_transporte <- Correlacion_transporte_inaccesibilidad %>% 
-  mutate(`Sí o no` = factor(`Sí o no`, labels = c("No", "No", "Sí", "Total"))) %>% 
-  filter(`Sí o no` != "Total")
+Datos_filtrados<-
+Inaccesibilidad_transporte %>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta")%>%
+  group_by(`Comunidad autónoma`)
   
-x11()
+View(Datos_filtrados)
 
+#Hacemos el gráfico de barras
 
-Resultado_final_transporte %>% 
-  drop_na() %>% 
-  ggplot(data = ., mapping = aes(x = `Sí o no` , y = `Comunidad autónoma` )) +
-  geom_point(na.rm = TRUE)
-
-
-
-
+Resultado <-
+Datos_filtrados %>%
+  drop_na() %>%
+  ggplot(aes(x =`Comunidad autonóma` , y = Total)) +
+  geom_bar(aes(fill = )
