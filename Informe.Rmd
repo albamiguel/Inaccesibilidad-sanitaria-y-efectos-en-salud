@@ -212,7 +212,7 @@ View(Inaccesibilidad_y_dificultades_de_transporte)
 
 # ANÁLISIS DE LOS DATOS:
 
- - Obtenemos el núemro de columnas que tiene:
+ - Obtenemos el número de columnas que tiene:
   
   str(Inaccesibilidad_y_dificultades_de_transporte)
   
@@ -252,7 +252,7 @@ Inaccesibilidad_transporte
 Datos_filtrados<-
 Inaccesibilidad_transporte %>%
   filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta")%>%
-  group_by(`Comunidad autónoma`)
+group_by(`Comunidad autónoma`)
   
 View(Datos_filtrados)
 
@@ -261,5 +261,18 @@ View(Datos_filtrados)
 Resultado <-
 Datos_filtrados %>%
   drop_na() %>%
-  ggplot(aes(x =`Comunidad autonóma` , y = Total)) +
-  geom_bar(aes(fill = )
+  ggplot(aes(x =`Comunidad autónoma` , y = Total)) +
+  geom_bar(fill= color )+
+  labs(title= "Inaccesibilidad transporte", x= "Comunidades autónomas", y= "Total")
+  
+Resultado
+
+ggplot(data = Datos_filtrados,
+       mapping = aes(x = factor(`Comunidad autónoma))) +
+  geom_bar()
+
+
+En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
+La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
+
+
