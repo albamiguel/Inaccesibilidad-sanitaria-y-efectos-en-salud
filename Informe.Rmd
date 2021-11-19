@@ -155,12 +155,13 @@ Muerte_inaccesibilidad %>%
 
 Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
 
-# Sexo/ Comunidad autónoma / Sí o no / Total
+- **Sexo/ Comunidad autónoma / Sí o no / Total**
+
 library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
 View(inaccesibilidad_comunidades)
 
-Vista general:
+--Vista general:
 
 summary(inaccesibilidad_comunidades)
 str(inaccesibilidad_comunidades)
@@ -170,7 +171,11 @@ Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
   
-# Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad"
+**Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad**
+
+
+
+
 Correlacion_muerte_inaccesibilidad <-
 Muerte_inaccesibilidad %>% 
   select(`Comunidad autónoma de residencia del fallecido`, Total) %>% 
@@ -179,7 +184,8 @@ Muerte_inaccesibilidad %>%
               select(`Comunidad autónoma`, `Sí o no`, Total),
             by = c("Comunidad autónoma de residencia del fallecido" = "Comunidad autónoma"))
           
-# Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:
+**Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:**
+
 Correlacion_muerte_inaccesibilidad
 table(Correlacion_muerte_inaccesibilidad$`Sí o no`)
 
