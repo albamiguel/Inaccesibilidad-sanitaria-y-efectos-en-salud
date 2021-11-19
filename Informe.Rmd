@@ -130,7 +130,7 @@ spec(Inaccesibilidad_por_motivos_economicos)
 
   summary(Inaccesibilidad_por_motivos_economicos)
 
-**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
     library(tidyverse)
 
@@ -189,14 +189,17 @@ Muerte_inaccesibilidad %>%
 Correlacion_muerte_inaccesibilidad
 table(Correlacion_muerte_inaccesibilidad$`Sí o no`)
 
-# Como en nuestro set de datos, no se especifica cuál es la diferencia entre "No" y "No necesitó asistencia", hemos dado por hecho que "No necesitó asistencia" implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única ("No"):
+**Como en nuestro set de datos, no se especifica cuál es la diferencia entre "No" y "No necesitó asistencia", hemos dado por hecho que "No necesitó asistencia" implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única ("No"):**
+
+
 Resultado_final <- Correlacion_muerte_inaccesibilidad %>% 
   mutate(`Sí o no` = factor(`Sí o no`, labels = c("No", "No", "Sí", "Total"))) %>% 
   filter(`Sí o no` != "Total")
   
 x11()
 
-# Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
+**Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:**
+
 Resultado_final %>% 
   drop_na() %>% 
   ggplot(data = ., mapping = aes(x = `Sí o no` , y = Total.x)) +
@@ -207,7 +210,7 @@ Resultado_final %>%
   theme_classic()
   
   
-  -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
+### **Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
 Importamos el set de datos:
 
@@ -216,7 +219,7 @@ Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilida
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
 View(Inaccesibilidad_y_dificultades_de_transporte)
 
-# ANÁLISIS DE LOS DATOS:
+### ANÁLISIS DE LOS DATOS:
 
  - Obtenemos el número de columnas que tiene:
   
@@ -231,7 +234,7 @@ View(Inaccesibilidad_y_dificultades_de_transporte)
   summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 
-# Nuestro set de datos esta compuesto por 4 columnas:
+-**Nuestro set de datos esta compuesto por 4 columnas:**
 
 - **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
 
@@ -251,9 +254,9 @@ Inaccesibilidad_transporte <-
   
 Inaccesibilidad_transporte
   
-#**Realizamos los GRÁFICOS**:
+**Realizamos los GRÁFICOS**:
 
-#Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
+**Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas**
 
 Datos_filtrados<-
 Inaccesibilidad_transporte %>%
@@ -262,7 +265,7 @@ group_by(`Comunidad autónoma`)
   
 View(Datos_filtrados)
 
-#Hacemos el gráfico de barras
+-**Hacemos el gráfico de barras**
 
 Resultado <-
   drop_na() %>%
@@ -271,7 +274,7 @@ Resultado <-
   geom_bar(stat='identity')+
   labs(title= "Inaccesibilidad transporte", x= "Comunidades autónomas", y= "Total")
   
-Resultado
+**RESULTADO**
 
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.

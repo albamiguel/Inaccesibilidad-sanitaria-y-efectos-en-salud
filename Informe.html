@@ -269,7 +269,9 @@ pre code {
 <li><p>Obtenemos resumen de los resultados:</p>
 <p>summary(Inaccesibilidad_por_motivos_economicos)</p></li>
 </ul>
-<p><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</p>
+</div>
+<div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
+<h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
 <pre><code>library(tidyverse)</code></pre>
 <ul>
 <li><strong>Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia.</strong></li>
@@ -293,22 +295,19 @@ pre code {
 <p>Correlacion_muerte_inaccesibilidad &lt;- Muerte_inaccesibilidad %&gt;% select(<code>Comunidad autónoma de residencia del fallecido</code>, Total) %&gt;% full_join(x = ., y = inaccesibilidad_comunidades %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total), by = c(“Comunidad autónoma de residencia del fallecido” = “Comunidad autónoma”))</p>
 <p><strong>Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:</strong></p>
 <p>Correlacion_muerte_inaccesibilidad table(Correlacion_muerte_inaccesibilidad$<code>Sí o no</code>)</p>
-</div>
-</div>
-<div id="como-en-nuestro-set-de-datos-no-se-especifica-cuál-es-la-diferencia-entre-no-y-no-necesitó-asistencia-hemos-dado-por-hecho-que-no-necesitó-asistencia-implica-que-no-hubo-inaccesibilidad-sanitaria-y-por-tanto-hemos-sumado-los-datos-de-ambas-variables-en-una-única-no" class="section level1">
-<h1>Como en nuestro set de datos, no se especifica cuál es la diferencia entre “No” y “No necesitó asistencia”, hemos dado por hecho que “No necesitó asistencia” implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única (“No”):</h1>
+<p><strong>Como en nuestro set de datos, no se especifica cuál es la diferencia entre “No” y “No necesitó asistencia”, hemos dado por hecho que “No necesitó asistencia” implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única (“No”):</strong></p>
 <p>Resultado_final &lt;- Correlacion_muerte_inaccesibilidad %&gt;% mutate(<code>Sí o no</code> = factor(<code>Sí o no</code>, labels = c(“No”, “No”, “Sí”, “Total”))) %&gt;% filter(<code>Sí o no</code> != “Total”)</p>
 <p>x11()</p>
-</div>
-<div id="finalmente-eliminamos-los-valores-na-para-que-no-afecten-a-nuestro-resultado-final-y-obtenemos-el-box-plot-que-relaciona-el-número-total-de-muertes-y-la-inaccesibilidad-sanitaria-por-comunidad-autónoma" class="section level1">
-<h1>Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:</h1>
+<p><strong>Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:</strong></p>
 <p>Resultado_final %&gt;% drop_na() %&gt;% ggplot(data = ., mapping = aes(x = <code>Sí o no</code> , y = Total.x)) + geom_point(na.rm = TRUE) + geom_boxplot(na.rm = TRUE)+ labs(x = “Sí inaccesibilidad / No inaccesibilidad”, y = “Total de muertes”, subtitle = “Correlación entre número de muertes e inaccesibilidad sanitaria”) + theme_classic()</p>
-<p>-<strong>Inaccesibilidad y dificultades de transporte (por comunidad autónoma)</strong>:</p>
+</div>
+<div id="inaccesibilidad-y-dificultades-de-transporte-por-comunidad-autónoma" class="section level3">
+<h3><strong>Inaccesibilidad y dificultades de transporte (por comunidad autónoma)</strong>:</h3>
 <p>Importamos el set de datos:</p>
 <p>library(readr) Inaccesibilidad_y_dificultades_de_transporte &lt;- read_delim(“DATOS/Inaccesibilidad y dificultades de transporte.csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE) View(Inaccesibilidad_y_dificultades_de_transporte)</p>
 </div>
-<div id="análisis-de-los-datos" class="section level1">
-<h1>ANÁLISIS DE LOS DATOS:</h1>
+<div id="análisis-de-los-datos" class="section level3">
+<h3>ANÁLISIS DE LOS DATOS:</h3>
 <ul>
 <li>Obtenemos el número de columnas que tiene:</li>
 </ul>
@@ -319,9 +318,7 @@ pre code {
 <p>spec(Inaccesibilidad_y_dificultades_de_transporte)</p>
 <p>-Obtenemos resumen de los resultados:</p>
 <p>summary(Inaccesibilidad_y_dificultades_de_transporte)</p>
-</div>
-<div id="nuestro-set-de-datos-esta-compuesto-por-4-columnas" class="section level1">
-<h1>Nuestro set de datos esta compuesto por 4 columnas:</h1>
+<p>-<strong>Nuestro set de datos esta compuesto por 4 columnas:</strong></p>
 <ul>
 <li><p><strong>Sexo</strong>: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.</p></li>
 <li><p><strong>Comunidad autonónoma</strong>: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).</p></li>
@@ -333,14 +330,15 @@ pre code {
 <p>Inaccesibilidad_transporte &lt;-<br />
 Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total)</p>
 <p>Inaccesibilidad_transporte</p>
-<p>#<strong>Realizamos los GRÁFICOS</strong>:</p>
-<p>#Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas</p>
+<p><strong>Realizamos los GRÁFICOS</strong>:</p>
+<p><strong>Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas</strong></p>
 <p>Datos_filtrados&lt;- Inaccesibilidad_transporte %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”)%&gt;% group_by(<code>Comunidad autónoma</code>)</p>
 <p>View(Datos_filtrados)</p>
-<p>#Hacemos el gráfico de barras</p>
+<p>-<strong>Hacemos el gráfico de barras</strong></p>
 <p>Resultado &lt;- drop_na() %&gt;% ggplot(data = Datos_filtrados, mapping = aes(x <code>Comunidad autónoma</code>, y = Total)) + geom_bar(stat=‘identity’)+ labs(title= “Inaccesibilidad transporte”, x= “Comunidades autónomas”, y= “Total”)</p>
-<p>Resultado</p>
+<p><strong>RESULTADO</strong></p>
 <p>En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia. La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.</p>
+</div>
 </div>
 
 
