@@ -259,17 +259,13 @@ View(Datos_filtrados)
 #Hacemos el gráfico de barras
 
 Resultado <-
-Datos_filtrados %>%
   drop_na() %>%
-  ggplot(aes(x =`Comunidad autónoma` , y = Total)) +
-  geom_bar(fill= color )+
+  ggplot(data = Datos_filtrados,
+       mapping = aes(x `Comunidad autónoma`, y = Total)) +
+  geom_bar(stat='identity')+
   labs(title= "Inaccesibilidad transporte", x= "Comunidades autónomas", y= "Total")
   
 Resultado
-
-ggplot(data = Datos_filtrados,
-       mapping = aes(x = factor(`Comunidad autónoma))) +
-  geom_bar()
 
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
