@@ -119,9 +119,9 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 ### Analisis de los datos   
 
 - Obtenemos el numero de columnas que tiene:
-
+*
 str(Inaccesibilidad_por_motivos_economicos)
-  
+  *-
 - Especificamos de que tipo son:
 
 spec(Inaccesibilidad_por_motivos_economicos)
@@ -129,6 +129,28 @@ spec(Inaccesibilidad_por_motivos_economicos)
 - Obtenemos resumen de los resultados:
 
   summary(Inaccesibilidad_por_motivos_economicos)
+  
+  
+
+-**Nuestro set de datos esta compuesto por 5 columnas:**
+
+- **Sexo**: compuesto por 1200 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
+
+- **Comunidad autonónoma**: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
+
+- **Tipos atención sanitaria**: compuesto por 1200 elementos, de clase caracter.Encontramos distitnnos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,  
+
+- **Si o No**: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
+
+- **Total**: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta. 
+
+library(tidyverse)
+
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
+
+Inaccesibilidad_transporte <-  
+  Inaccesibilidad_y_dificultades_de_transporte %>% 
+  select(`Comunidad autónoma`, `Sí o no`, Total)
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 

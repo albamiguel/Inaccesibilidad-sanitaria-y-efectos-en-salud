@@ -259,9 +259,7 @@ pre code {
 <h3>Analisis de los datos</h3>
 <ul>
 <li>Obtenemos el numero de columnas que tiene:</li>
-</ul>
-<p>str(Inaccesibilidad_por_motivos_economicos)</p>
-<ul>
+<li>str(Inaccesibilidad_por_motivos_economicos) *-</li>
 <li>Especificamos de que tipo son:</li>
 </ul>
 <p>spec(Inaccesibilidad_por_motivos_economicos)</p>
@@ -269,6 +267,18 @@ pre code {
 <li><p>Obtenemos resumen de los resultados:</p>
 <p>summary(Inaccesibilidad_por_motivos_economicos)</p></li>
 </ul>
+<p>-<strong>Nuestro set de datos esta compuesto por 5 columnas:</strong></p>
+<ul>
+<li><p><strong>Sexo</strong>: compuesto por 1200 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.</p></li>
+<li><p><strong>Comunidad autonónoma</strong>: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).</p></li>
+<li><p><strong>Tipos atención sanitaria</strong>: compuesto por 1200 elementos, de clase caracter.Encontramos distitnnos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,</p></li>
+<li><p><strong>Si o No</strong>: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.</p></li>
+<li><p><strong>Total</strong>: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta.</p></li>
+</ul>
+<p>library(tidyverse)</p>
+<p>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma</p>
+<p>Inaccesibilidad_transporte &lt;-<br />
+Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total)</p>
 </div>
 <div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
 <h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
