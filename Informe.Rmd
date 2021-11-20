@@ -138,7 +138,7 @@ spec(Inaccesibilidad_por_motivos_economicos)
 
 - **Comunidad autonónoma**: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
 
-- **Tipos atención sanitaria**: compuesto por 1200 elementos, de clase caracter.Encontramos distitnnos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,  
+- **Tipos atención sanitaria**: compuesto por 1200 elementos, de clase caracter.Encontramos distintos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,  
 
 - **Si o No**: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
 
@@ -148,9 +148,12 @@ library(tidyverse)
 
 Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
 
-Inaccesibilidad_transporte <-  
-  Inaccesibilidad_y_dificultades_de_transporte %>% 
+Inaccesibilidad_m_economicos <-  
+  Inaccesibilidad_por_motivos_economicos %>% 
   select(`Comunidad autónoma`, `Sí o no`, Total)
+
+Inaccesibilidad_m_economicos
+
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
