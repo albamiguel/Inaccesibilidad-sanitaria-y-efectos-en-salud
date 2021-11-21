@@ -271,14 +271,17 @@ pre code {
 <ul>
 <li><p><strong>Sexo</strong>: compuesto por 1200 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.</p></li>
 <li><p><strong>Comunidad autonónoma</strong>: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).</p></li>
-<li><p><strong>Tipos atención sanitaria</strong>: compuesto por 1200 elementos, de clase caracter.Encontramos distitnnos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,</p></li>
+<li><p><strong>Tipos atención sanitaria</strong>: compuesto por 1200 elementos, de clase caracter.Encontramos distintos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,</p></li>
 <li><p><strong>Si o No</strong>: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.</p></li>
 <li><p><strong>Total</strong>: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta.</p></li>
 </ul>
 <p>library(tidyverse)</p>
 <p>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma</p>
-<p>Inaccesibilidad_transporte &lt;-<br />
-Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total)</p>
+<p>Inaccesibilidad_m_economicos &lt;-<br />
+Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</code>,<code>Tipos atención sanitaria</code>, <code>Sí o no</code>, Total)</p>
+<p>Inaccesibilidad_m_economicos</p>
+<p>Datos_filtrados1&lt;- Inaccesibilidad_m_economicos%&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Tipos atención sanitaria</code>)</p>
+<p>View(Datos_filtrados1)</p>
 </div>
 <div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
 <h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
