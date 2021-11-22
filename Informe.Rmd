@@ -157,7 +157,7 @@ Inaccesibilidad_m_economicos
 Datos_filtrados_economicos<-
 Inaccesibilidad_m_economicos %>%
   filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
-group_by(`Comunidad autónoma`,`Sexo`,`Tipos atención sanitaria`)
+group_by(`Comunidad autónoma`,`Sexo`,`Tipos atención sanitaria`,`Total`)
   
 View(Datos_filtrados_economicos)
 
@@ -169,9 +169,9 @@ Resultado2 <-
   geom_bar(stat='identity',position='dodge')+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))
-  theme(axis.text.y = element_text(angle = 180, vjust = 1.5, hjust=1.5))
+  theme(axis.text.y = element_text(angle = 160, vjust = 15, hjust=15))
   labs(title= "Inaccesibilidad por motivos economicos", x= " ", y= " ")
-  space(0.4,2.5)
+  
 Resultado2
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
