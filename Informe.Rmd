@@ -150,16 +150,16 @@ Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comu
 
 Inaccesibilidad_m_economicos <-  
   Inaccesibilidad_por_motivos_economicos %>% 
-  select(`Comunidad autónoma`,`Tipos atención sanitaria`, `Sí o no`, Total)
+  select(`Comunidad autónoma`, `Sí o no`, Total,`Sexo`)
 
 Inaccesibilidad_m_economicos
 
-Datos_filtrados1<-
-Inaccesibilidad_m_economicos%>%
-  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta")%>%
-group_by(`Comunidad autónoma`,`Tipos atención sanitaria`)
-Datos_filtrados1
-View(Datos_filtrados1)
+Datos_filtrados_economicos<-
+Inaccesibilidad_m_economicos %>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
+group_by(`Comunidad autónoma`,`Sexo`)
+  
+View(Datos_filtrados_economicos)
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
@@ -281,7 +281,7 @@ Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comu
 
 Inaccesibilidad_transporte <-  
   Inaccesibilidad_y_dificultades_de_transporte %>% 
-  select(`Comunidad autónoma`, `Sí o no`, Total)
+  select(`Comunidad autónoma`, `Sí o no`, Total, `Sexo`)
   
 Inaccesibilidad_transporte
   
@@ -291,8 +291,8 @@ Inaccesibilidad_transporte
 
 Datos_filtrados<-
 Inaccesibilidad_transporte %>%
-  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta")%>%
-group_by(`Comunidad autónoma`)
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
+group_by(`Comunidad autónoma`,`Sexo`)
   
 View(Datos_filtrados)
 
