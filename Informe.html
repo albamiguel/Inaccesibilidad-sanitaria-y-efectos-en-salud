@@ -259,7 +259,9 @@ pre code {
 <h3>Analisis de los datos</h3>
 <ul>
 <li>Obtenemos el numero de columnas que tiene:</li>
-<li>str(Inaccesibilidad_por_motivos_economicos) *-</li>
+</ul>
+<p>str(Inaccesibilidad_por_motivos_economicos)</p>
+<ul>
 <li>Especificamos de que tipo son:</li>
 </ul>
 <p>spec(Inaccesibilidad_por_motivos_economicos)</p>
@@ -278,10 +280,10 @@ pre code {
 <p>library(tidyverse)</p>
 <p>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma</p>
 <p>Inaccesibilidad_m_economicos &lt;-<br />
-Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</code>,<code>Tipos atención sanitaria</code>, <code>Sí o no</code>, Total)</p>
+Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total,<code>Sexo</code>)</p>
 <p>Inaccesibilidad_m_economicos</p>
-<p>Datos_filtrados1&lt;- Inaccesibilidad_m_economicos%&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Tipos atención sanitaria</code>)</p>
-<p>View(Datos_filtrados1)</p>
+<p>Datos_filtrados_economicos&lt;- Inaccesibilidad_m_economicos %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”,<code>Sexo</code> != “Hombres”&amp;<code>Sexo</code> !=“Mujeres”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Sexo</code>)</p>
+<p>View(Datos_filtrados_economicos)</p>
 </div>
 <div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
 <h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
@@ -341,11 +343,11 @@ Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</
 <p>library(tidyverse)</p>
 <p>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma</p>
 <p>Inaccesibilidad_transporte &lt;-<br />
-Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total)</p>
+Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total, <code>Sexo</code>)</p>
 <p>Inaccesibilidad_transporte</p>
 <p><strong>Realizamos los GRÁFICOS</strong>:</p>
 <p><strong>Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas</strong></p>
-<p>Datos_filtrados&lt;- Inaccesibilidad_transporte %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”)%&gt;% group_by(<code>Comunidad autónoma</code>)</p>
+<p>Datos_filtrados&lt;- Inaccesibilidad_transporte %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”,<code>Sexo</code> != “Hombres”&amp;<code>Sexo</code> !=“Mujeres”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Sexo</code>)</p>
 <p>View(Datos_filtrados)</p>
 <p>-<strong>Hacemos el gráfico de barras</strong></p>
 <p>Resultado &lt;- drop_na() %&gt;% ggplot(data = Datos_filtrados, mapping = aes(x <code>Comunidad autónoma</code>, y = Total)) + geom_bar(stat=‘identity’)+ labs(title= “Inaccesibilidad transporte”, x= “Comunidades autónomas”, y= “Total”)</p>

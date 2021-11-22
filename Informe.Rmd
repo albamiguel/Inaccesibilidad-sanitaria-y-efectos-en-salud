@@ -298,13 +298,16 @@ View(Datos_filtrados)
 
 -**Hacemos el gráfico de barras**
 
-Resultado <-
+Resultado3 <-
   drop_na() %>%
   ggplot(data = Datos_filtrados,
-       mapping = aes(x `Comunidad autónoma`, y = Total)) +
+       mapping = aes(x =reorder(`Comunidad autónoma`,Total), y = Total)) +
   geom_bar(stat='identity')+
-  labs(title= "Inaccesibilidad transporte", x= "Comunidades autónomas", y= "Total")
-  
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
+  labs(title= "Inaccesibilidad transporte", x= " ", y= " ")
+Resultado3
+
 **RESULTADO**
 
 
