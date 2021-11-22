@@ -150,16 +150,29 @@ Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comu
 
 Inaccesibilidad_m_economicos <-  
   Inaccesibilidad_por_motivos_economicos %>% 
-  select(`Comunidad autónoma`, `Sí o no`, Total,`Sexo`)
+  select(`Comunidad autónoma`, `Sí o no`, Total,`Sexo`,`Tipos atención sanitaria`)
 
 Inaccesibilidad_m_economicos
 
 Datos_filtrados_economicos<-
 Inaccesibilidad_m_economicos %>%
   filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
-group_by(`Comunidad autónoma`,`Sexo`)
+group_by(`Comunidad autónoma`,`Sexo`,`Tipos atención sanitaria`)
   
 View(Datos_filtrados_economicos)
+
+
+Resultado2 <-
+  drop_na() %>%
+  ggplot(data = Datos_filtrados_economicos,
+       mapping = aes(x =`Comunidad autónoma`, y = Total, fill=`Tipos atención sanitaria`)) +
+  geom_bar(stat='identity',position='dodge')+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))
+  theme(axis.text.y = element_text(angle = 180, vjust = 1.5, hjust=1.5))
+  labs(title= "Inaccesibilidad por motivos economicos", x= " ", y= " ")
+  space(0.4,2.5)
+Resultado2
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
@@ -302,7 +315,7 @@ Resultado3 <-
   drop_na() %>%
   ggplot(data = Datos_filtrados,
        mapping = aes(x =reorder(`Comunidad autónoma`,Total), y = Total)) +
-  geom_bar(stat='identity')+
+  geom_bar(stat='identity)+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   labs(title= "Inaccesibilidad transporte", x= " ", y= " ")
