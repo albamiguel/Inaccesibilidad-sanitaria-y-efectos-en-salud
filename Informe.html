@@ -251,20 +251,53 @@ pre code {
 <div id="inaccesibilidad-por-motivos-económicos-por-comunidad-autónoma" class="section level3">
 <h3><strong>Inaccesibilidad por motivos económicos (por comunidad autónoma)</strong>:</h3>
 <ul>
-<li><p><strong>Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma </strong>.</p>
-<p>library(readr) Inaccesibilidad_por_motivos_economicos &lt;- read_delim(“DATOS/Inaccesibilidad por motivos economicos.csv”, delim = “;”, escape_double = FALSE, trim_ws = TRUE) View(Inaccesibilidad_por_motivos_economicos)</p></li>
+<li><strong>Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma </strong>.</li>
 </ul>
+<pre class="r"><code>   library(readr)
+   Inaccesibilidad_por_motivos_economicos &lt;-
+   read_delim(&quot;DATOS/Inaccesibilidad por motivos economicos.csv&quot;, 
+   delim = &quot;;&quot;, escape_double = FALSE, trim_ws = TRUE)</code></pre>
+<pre><code>## Rows: 1200 Columns: 5</code></pre>
+<pre><code>## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;;&quot;
+## chr (5): Sexo, Comunidad autónoma, Tipos atención sanitaria, Sí o no, Total</code></pre>
+<pre><code>## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>   View(Inaccesibilidad_por_motivos_economicos)</code></pre>
 </div>
 <div id="analisis-de-los-datos" class="section level3">
 <h3>Analisis de los datos</h3>
 <ul>
 <li>Obtenemos el numero de columnas que tiene:</li>
 </ul>
-<p>str(Inaccesibilidad_por_motivos_economicos)</p>
+<pre class="r"><code>str(Inaccesibilidad_por_motivos_economicos)</code></pre>
+<pre><code>## spec_tbl_df [1,200 x 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ Sexo                    : chr [1:1200] &quot;Ambos sexos&quot; &quot;Ambos sexos&quot; &quot;Ambos sexos&quot; &quot;Ambos sexos&quot; ...
+##  $ Comunidad autónoma      : chr [1:1200] &quot;Total Nacional&quot; &quot;Total Nacional&quot; &quot;Total Nacional&quot; &quot;Total Nacional&quot; ...
+##  $ Tipos atención sanitaria: chr [1:1200] &quot;Atención médica&quot; &quot;Atención médica&quot; &quot;Atención médica&quot; &quot;Atención médica&quot; ...
+##  $ Sí o no                 : chr [1:1200] &quot;TOTAL&quot; &quot;Sí&quot; &quot;No&quot; &quot;No necesitó asistencia&quot; ...
+##  $ Total                   : chr [1:1200] &quot;39.974,1&quot; &quot;739,2&quot; &quot;37.909,7&quot; &quot;1.313,7&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   Sexo = col_character(),
+##   ..   `Comunidad autónoma` = col_character(),
+##   ..   `Tipos atención sanitaria` = col_character(),
+##   ..   `Sí o no` = col_character(),
+##   ..   Total = col_character()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
 <ul>
 <li>Especificamos de que tipo son:</li>
 </ul>
-<p>spec(Inaccesibilidad_por_motivos_economicos)</p>
+<pre class="r"><code>spec(Inaccesibilidad_por_motivos_economicos)</code></pre>
+<pre><code>## cols(
+##   Sexo = col_character(),
+##   `Comunidad autónoma` = col_character(),
+##   `Tipos atención sanitaria` = col_character(),
+##   `Sí o no` = col_character(),
+##   Total = col_character()
+## )</code></pre>
 <ul>
 <li><p>Obtenemos resumen de los resultados:</p>
 <p>summary(Inaccesibilidad_por_motivos_economicos)</p></li>
@@ -280,10 +313,12 @@ pre code {
 <p>library(tidyverse)</p>
 <p>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma</p>
 <p>Inaccesibilidad_m_economicos &lt;-<br />
-Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total,<code>Sexo</code>)</p>
+Inaccesibilidad_por_motivos_economicos %&gt;% select(<code>Comunidad autónoma</code>, <code>Sí o no</code>, Total,<code>Sexo</code>,<code>Tipos atención sanitaria</code>)</p>
 <p>Inaccesibilidad_m_economicos</p>
-<p>Datos_filtrados_economicos&lt;- Inaccesibilidad_m_economicos %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”,<code>Sexo</code> != “Hombres”&amp;<code>Sexo</code> !=“Mujeres”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Sexo</code>)</p>
+<p>Datos_filtrados_economicos&lt;- Inaccesibilidad_m_economicos %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”,<code>Sexo</code> != “Hombres”&amp;<code>Sexo</code> !=“Mujeres”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Sexo</code>,<code>Tipos atención sanitaria</code>,<code>Total</code>)</p>
 <p>View(Datos_filtrados_economicos)</p>
+<p>Resultado2 &lt;- drop_na() %&gt;% ggplot(data = Datos_filtrados_economicos, mapping = aes(x =<code>Comunidad autónoma</code>, y = Total, fill=<code>Tipos atención sanitaria</code>)) + geom_bar(stat=‘identity’,position=‘dodge’)+ theme_bw()+ theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1)) theme(axis.text.y = element_text(angle = 160, vjust = 15, hjust=15)) labs(title= “Inaccesibilidad por motivos economicos”, x= &quot; “, y=” &quot;)</p>
+<p>Resultado2</p>
 </div>
 <div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
 <h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
@@ -350,7 +385,7 @@ Inaccesibilidad_y_dificultades_de_transporte %&gt;% select(<code>Comunidad autó
 <p>Datos_filtrados&lt;- Inaccesibilidad_transporte %&gt;% filter(<code>Comunidad autónoma</code>!=“Total Nacional” &amp; <code>Sí o no</code> != “TOTAL” &amp; <code>Sí o no</code> != “No” &amp; <code>Sí o no</code> != “No necesitó asistencia” &amp; <code>Sí o no</code> != “No consta”,<code>Sexo</code> != “Hombres”&amp;<code>Sexo</code> !=“Mujeres”)%&gt;% group_by(<code>Comunidad autónoma</code>,<code>Sexo</code>)</p>
 <p>View(Datos_filtrados)</p>
 <p>-<strong>Hacemos el gráfico de barras</strong></p>
-<p>Resultado &lt;- drop_na() %&gt;% ggplot(data = Datos_filtrados, mapping = aes(x <code>Comunidad autónoma</code>, y = Total)) + geom_bar(stat=‘identity’)+ labs(title= “Inaccesibilidad transporte”, x= “Comunidades autónomas”, y= “Total”)</p>
+<p>Resultado3 &lt;- drop_na() %&gt;% ggplot(data = Datos_filtrados, mapping = aes(x =reorder(<code>Comunidad autónoma</code>,Total), y = Total)) + geom_bar(stat=’identity)+ theme_bw()+ theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+ labs(title= “Inaccesibilidad transporte”, x= &quot; “, y=” &quot;) Resultado3</p>
 <p><strong>RESULTADO</strong></p>
 <p>En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia. La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.</p>
 </div>
