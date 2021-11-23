@@ -166,7 +166,7 @@ Inaccesibilidad_m_economicos
 
 Datos_filtrados_economicos<-
 Inaccesibilidad_m_economicos %>%
-  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres"& `Tipos atención sanitaria`!="Medicamento recetado")%>%
 group_by(`Comunidad autónoma`,`Sexo`,`Tipos atención sanitaria`,`Total`)
   
 View(Datos_filtrados_economicos)
@@ -176,7 +176,7 @@ Resultado2 <-
   drop_na() %>%
   ggplot(data = Datos_filtrados_economicos,
        mapping = aes(x =`Comunidad autónoma`, y = Total, fill=`Tipos atención sanitaria`)) +
-  geom_bar(stat='identity',position='dodge', alpha=.7)+
+  geom_bar(stat='identity',position='dodge',width = 0.5, alpha= 0.7)+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))
