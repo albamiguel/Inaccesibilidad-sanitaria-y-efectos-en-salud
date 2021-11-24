@@ -329,7 +329,7 @@ Nuestro set de datos esta compuesto por 4 columnas:
 library(tidyverse)
 ```
 
-Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
 
 ```{r }
 Inaccesibilidad_transporte <-  
@@ -356,31 +356,18 @@ View(Datos_filtrados)
 
 library(forcats)
 
+
 Resultado3 <-
   drop_na() %>%
   ggplot(data = Datos_filtrados,
-       mapping = aes(x =`Comunidad autónoma`, y = Total)) +
-  geom_bar(stat='identity')+
+       mapping = aes(reorder(`Comunidad autónoma`,Total), Total)) +
+  geom_bar(stat='identity',colour= "red")+
   theme_classic()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
   labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
   
 Resultado3
-
-
-Resultado4 <-
-  drop_na() %>%
-#mutate(`Comunidad autónoma`= fct_reorder(`Comunidad autónoma`, Total)%>%
-  ggplot(data = Datos_filtrados,
-       mapping = aes(reorder(`Comunidad autónoma`,Total), Total)) +
-  geom_bar(stat='identity')+
-  theme_classic()+
-  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
-  theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
-  labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
-  
-Resultado4
 
 
 ##CONCLUSIONES:
