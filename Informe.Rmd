@@ -360,7 +360,7 @@ library(forcats)
 Resultado3 <-
   drop_na() %>%
   ggplot(data = Datos_filtrados,
-       mapping = aes(reorder(`Comunidad autónoma`,Total), Total)) +
+       mapping = aes(x= reorder(`Comunidad autónoma`,-Total), y= Total)) +
   geom_bar(stat='identity',colour= "red")+
   theme_classic()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
