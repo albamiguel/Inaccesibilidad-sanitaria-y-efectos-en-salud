@@ -293,9 +293,7 @@ Importamos el set de datos:
 
 ```{r }
 library(readr)
-Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
-    delim = ";", escape_double = FALSE, trim_ws = TRUE)
-View(Inaccesibilidad_y_dificultades_de_transporte)
+Inaccesibilidad_y_dificultades_de_transporte <- read_csv2("DATOS/Inaccesibilidad y dificultades de transporte.csv")
 ```
 
 ###ANÁLISIS DE LOS DATOS:
@@ -352,36 +350,26 @@ Inaccesibilidad_transporte %>%
   filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
 group_by(`Comunidad autónoma`,`Sexo`)
   
-View(Datos_filtrados)
+str(Datos_filtrados)
 ```
 
 **Hacemos el gráfico de barras:
 
 library(forcats)
-  
-Resultado3 <-
-  drop_na() %>%
-  ggplot(data = Datos_filtrados,
-       mapping = aes(x =`Comunidad autónoma`, y = Total)) +
-  geom_bar(stat='identity',fill =rainbow(19))+
-  theme_classic()+
-  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
-  theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
-  labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
-Resultado3
 
 Resultado4 <-
+Datos_filtrados %>% 
   drop_na() %>%
-#mutate(`Comunidad autónoma`= fct_reorder(`Comunidad autónoma`, Total)%>%
-  ggplot(data = Datos_filtrados,
-       mapping = aes(reorder(`Comunidad autónoma`,Total), Total)) +
-  geom_bar(stat='identity')+
+  ggplot(data = .,
+       mapping = aes(x=reorder(`Comunidad autónoma`,-Total), y= Total)) +
+  geom_bar(stat='identity',,fill =rainbow(19))+
   theme_classic()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
   labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
 
 Resultado4
+
 ##CONCLUSIONES:
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
