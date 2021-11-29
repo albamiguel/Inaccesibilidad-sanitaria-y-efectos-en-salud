@@ -105,42 +105,146 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ### __DATOS__:
 
-  -**Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
+### **Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
   
+- **Importamos el set de datos del INE sobre la inaccesibilidad sanitaria por motivos ecónomicos agrupados por comunidad autónoma **.
+
+```{r } 
    library(readr)
    Inaccesibilidad_por_motivos_economicos <-
    read_delim("DATOS/Inaccesibilidad por motivos economicos.csv", 
    delim = ";", escape_double = FALSE, trim_ws = TRUE)
    View(Inaccesibilidad_por_motivos_economicos)
+```
    
+### Analisis de los datos   
 
-  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+- Obtenemos el numero de columnas que tiene:
 
-  -**Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**:
+```{r } 
+str(Inaccesibilidad_por_motivos_economicos)
+```
 
+- Especificamos de que tipo son:
+
+```{r } 
+spec(Inaccesibilidad_por_motivos_economicos)
+```
+  
+- Obtenemos resumen de los resultados:
+
+```{r } 
+summary(Inaccesibilidad_por_motivos_economicos)
+```
+  
+
+-**Nuestro set de datos esta compuesto por 5 columnas:**
+
+- **Sexo**: compuesto por 1200 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
+
+- **Comunidad autonónoma**: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
+
+- **Tipos atención sanitaria**: compuesto por 1200 elementos, de clase caracter.Encontramos distintos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,  
+
+- **Si o No**: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
+
+- **Total**: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta. 
+
+
+```{r } 
 library(tidyverse)
+```
 
-# Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia
-# Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
+
+```{r } 
+Inaccesibilidad_m_economicos <-  
+  Inaccesibilidad_por_motivos_economicos %>% 
+  select(`Comunidad autónoma`, `Sí o no`, Total,`Sexo`,`Tipos atención sanitaria`)
+
+Inaccesibilidad_m_economicos
+
+Datos_filtrados_economicos<-
+Inaccesibilidad_m_economicos %>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres"& `Tipos atención sanitaria`!="Medicamento recetado")%>%
+group_by(`Comunidad autónoma`,`Sexo`,`Tipos atención sanitaria`,`Total`)
+  
+View(Datos_filtrados_economicos)
+
+```
+Resultado2 <-
+Datos_filtrados_economicos %>% 
+  drop_na() %>%
+  ggplot(data =.,
+       mapping = aes(x =`Comunidad autónoma`, y = Total, fill=factor(`Tipos atención sanitaria`))) +
+  geom_bar(stat='identity',position='dodge',width = 0.5, alpha= 0.7)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
+  theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
+  labs(title= "Inaccesibilidad por motivos economicos", x= " ", y= " ",fill="Tipos de atencion sanitaria")
+  
+Resultado2
+
+
+### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
+
+```{r } 
+library(tidyverse)
+```
+
+- **Importamos el set de datos del INE de defunciones por comunidad autónoma de residencia.**
+
+Comunidad autónoma de residencia del fallecido / Mes / Sexo / Total
+
+```{r } 
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 View(Muerte_inaccesibilidad)
+```
 
-# Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
+Vista general:
+
+```{r }
+summary(Muerte_inaccesibilidad)
+str(Muerte_inaccesibilidad)
+```
+
+
+Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
+
+```{r } 
 Muerte_inaccesibilidad %>%
   select(`Comunidad autónoma de residencia del fallecido`, Total_muertes = Total)
+```
 
-# Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
-# Sexo/ Comunidad autónoma / Sí o no / Total
+Importamos el set de datos del INE de demora excesiva o inaccesibilidad a la asistencia médica por lista de espera en los últimos 12 meses según sexo y comunidad autónoma. Población de 15 y más años
+
+
+- **Sexo/ Comunidad autónoma / Sí o no / Total**
+
+```{r } 
 library(readxl)
 inaccesibilidad_comunidades <- read_excel("DATOS/inaccesibilidad_comunidades.xlsx")
 View(inaccesibilidad_comunidades)
+```
 
-# Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
+Vista general:
+
+```{r } 
+summary(inaccesibilidad_comunidades)
+str(inaccesibilidad_comunidades)
+```
+
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
+
+```{r } 
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
+```
+  
+**Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad**
 
-# Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad"
+```{r } 
 Correlacion_muerte_inaccesibilidad <-
 Muerte_inaccesibilidad %>% 
   select(`Comunidad autónoma de residencia del fallecido`, Total) %>% 
@@ -148,19 +252,28 @@ Muerte_inaccesibilidad %>%
             y = inaccesibilidad_comunidades %>% 
               select(`Comunidad autónoma`, `Sí o no`, Total),
             by = c("Comunidad autónoma de residencia del fallecido" = "Comunidad autónoma"))
+```
           
-# Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:
+Comprobamos las variables del nuevo set de datos creado a partir de los anteriores, y el número de repeticiones que aparece en cada una de ellas:
+
+```{r } 
 Correlacion_muerte_inaccesibilidad
 table(Correlacion_muerte_inaccesibilidad$`Sí o no`)
+```
 
-# Como en nuestro set de datos, no se especifica cuál es la diferencia entre "No" y "No necesitó asistencia", hemos dado por hecho que "No necesitó asistencia" implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única ("No"):
+Como en nuestro set de datos, no se especifica cuál es la diferencia entre "No" y "No necesitó asistencia", hemos dado por hecho que "No necesitó asistencia" implica que no hubo inaccesibilidad sanitaria, y por tanto, hemos sumado los datos de ambas variables en una única ("No"):
+
+```{r } 
 Resultado_final <- Correlacion_muerte_inaccesibilidad %>% 
   mutate(`Sí o no` = factor(`Sí o no`, labels = c("No", "No", "Sí", "Total"))) %>% 
   filter(`Sí o no` != "Total")
   
 x11()
+```
 
-# Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
+Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
+
+```{r } 
 Resultado_final %>% 
   drop_na() %>% 
   ggplot(data = ., mapping = aes(x = `Sí o no` , y = Total.x)) +
@@ -169,13 +282,107 @@ Resultado_final %>%
   labs(x = "Sí inaccesibilidad / No inaccesibilidad", y = "Total de muertes", 
        subtitle = "Correlación entre número de muertes e inaccesibilidad sanitaria") +
   theme_classic()
+```
   
   
-  -**Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
+### **Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
+Importamos el set de datos:
+
+```{r }
 library(readr)
 Inaccesibilidad_y_dificultades_de_transporte <- read_delim("DATOS/Inaccesibilidad y dificultades de transporte.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
 View(Inaccesibilidad_y_dificultades_de_transporte)
+```
+
+###ANÁLISIS DE LOS DATOS:
+
+- Obtenemos el número de columnas que tiene:
+  
+```{r } 
+str(Inaccesibilidad_y_dificultades_de_transporte)
+```
+  
+- Especificamos de que tipo son:
+
+```{r } 
+spec(Inaccesibilidad_y_dificultades_de_transporte)
+```
+
+- Obtenemos resumen de los resultados:
+
+```{r } 
+summary(Inaccesibilidad_y_dificultades_de_transporte)
+```
+
+Nuestro set de datos esta compuesto por 4 columnas:
+
+- **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
+
+- **Comunidad autonónoma**: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).
+
+- **Si o No**: compuesto por 300 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
+
+- **Total**: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta. 
+
+```{r } 
+library(tidyverse)
+```
+
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
+
+```{r }
+Inaccesibilidad_transporte <-  
+  Inaccesibilidad_y_dificultades_de_transporte %>% 
+  select(`Comunidad autónoma`, `Sí o no`, Total, `Sexo`)
+  
+Inaccesibilidad_transporte
+```
+  
+##GRÁFICOS:
+
+Filtramos las datos que queremos (Si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
+
+```{r } 
+Datos_filtrados<-
+Inaccesibilidad_transporte %>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
+group_by(`Comunidad autónoma`,`Sexo`)
+  
+View(Datos_filtrados)
+```
+
+**Hacemos el gráfico de barras:
+
+library(forcats)
+  
+Resultado3 <-
+  drop_na() %>%
+  ggplot(data = Datos_filtrados,
+       mapping = aes(x =`Comunidad autónoma`, y = Total)) +
+  geom_bar(stat='identity',fill =rainbow(19))+
+  theme_classic()+
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
+  theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
+  labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
+Resultado3
+
+Resultado4 <-
+  drop_na() %>%
+#mutate(`Comunidad autónoma`= fct_reorder(`Comunidad autónoma`, Total)%>%
+  ggplot(data = Datos_filtrados,
+       mapping = aes(reorder(`Comunidad autónoma`,Total), Total)) +
+  geom_bar(stat='identity')+
+  theme_classic()+
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
+  theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
+  labs(title= "Inaccesibilidad por transporte", x= " ", y= " ")
+
+Resultado4
+##CONCLUSIONES:
+
+En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
+La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
 
 
