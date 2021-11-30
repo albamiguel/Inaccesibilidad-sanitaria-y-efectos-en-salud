@@ -379,7 +379,7 @@ Resultado3
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
 
-**2) Queremos ver las diferencias entre hombres y mujeres en cuanto a inaccesibilidada por transporte en el total nacional**
+**2) Queremos comparar la inaccesibilidad causada por trasnporte entre hombres y mujeres en el total nacional**
 
 Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
 
