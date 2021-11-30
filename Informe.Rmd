@@ -363,7 +363,7 @@ Datos_filtrados %>%
   drop_na() %>%
   ggplot(data = .,
        mapping = aes(x=reorder(`Comunidad autónoma`,-Total), y= Total)) +
-  geom_bar(stat='identity',fill =purple)+
+  geom_bar(stat='identity',fill = "aquamarine2")+
   theme_classic()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
@@ -379,15 +379,44 @@ Resultado3
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
 
-**2)Queremos ver las diferencias entre hombres y mujeres en cuanto a inaccesibilidada por transporte**
+**2) Queremos ver las diferencias entre hombres y mujeres en cuanto a inaccesibilidada por transporte en el total nacional**
 
-Filtramos los datos que queremos (si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
+Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
 
-```{r } 
-Datos_filtrados2<-
-Inaccesibilidad_transporte %>%
-  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
-group_by(`Comunidad autónoma`,`Sexo`)
+```{r}
+Inaccesibilidad_sexos <-  
+  Inaccesibilidad_y_dificultades_de_transporte %>% 
+  select(`Sí o no`, Total, `Sexo`, `Comunidad autónoma`)
   
+Inaccesibilidad_sexos
+```
+
+Filtramos los datos que queremos (si han sufrido inaccesibilidad) y agrupamos por sexo
+
+```{r}
+Datos_filtrados2<-
+Inaccesibilidad_sexos %>%
+  filter(`Comunidad autónoma`=="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Ambos sexos")%>%
+group_by(`Comunidad autónoma`, `Sexo`)
+
 str(Datos_filtrados2)
 ```
+
+```{r}
+Resultado4 <-
+Datos_filtrados2 %>%
+  drop_na() %>%
+  ggplot(data = .,aes(x=`Sexo`, y= Total, color= "Red")) +
+  geom_point()+
+  xlab(" ")+
+  ylab(" ")+
+  ggtitle("Inaccesibilidad por sexos")+
+  theme_minimal()
+
+Resultado4
+```
+
+### Conclusiones:
+
+En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
+La comparación que hemos realizado es por sexos. Podemos observar que hay una diferencia entre sexos. Las mujeres han sufrido mayor inaccesibilidad que los hombres.
