@@ -115,9 +115,9 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
    read_csv2("DATOS/Inaccesibilidad por motivos economicos.csv")
 ```
    
-### Analisis de los datos   
+### Análisis de los datos   
 
-- Obtenemos el numero de columnas que tiene:
+- Obtenemos el número de columnas que tiene:
 
 ```{r } 
 str(Inaccesibilidad_por_motivos_economicos)
@@ -240,8 +240,8 @@ Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total
 inaccesibilidad_comunidades %>%
   select(`Comunidad autónoma`, `Sí o no`, Total)
 ```
-  
-**Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad**
+
+Realizamos un full join entre ambos sets de datos, utilizando como elemento de unión la comunidad autónoma, y lo guardamos en un objeto llamado "Correlacion_muerte_inaccesibilidad
 
 ```{r } 
 Correlacion_muerte_inaccesibilidad <-
@@ -285,14 +285,14 @@ Resultado_final %>%
   
 ### **Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
-Importamos el set de datos:
+- **Importamos el set de datos del INE de  Inaccesibilidad y dificultades de transporte agrupados por comunidad autónoma)**:
 
 ```{r }
 library(readr)
 Inaccesibilidad_y_dificultades_de_transporte <- read_csv2("DATOS/Inaccesibilidad y dificultades de transporte.csv")
 ```
 
-###ANÁLISIS DE LOS DATOS:
+### Análisis de datos:
 
 - Obtenemos el número de columnas que tiene:
   
@@ -312,7 +312,7 @@ spec(Inaccesibilidad_y_dificultades_de_transporte)
 summary(Inaccesibilidad_y_dificultades_de_transporte)
 ```
 
-Nuestro set de datos esta compuesto por 4 columnas:
+-**Nuestro set de datos esta compuesto por 4 columnas**:
 
 - **Sexo**: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.
 
@@ -336,7 +336,9 @@ Inaccesibilidad_transporte <-
 Inaccesibilidad_transporte
 ```
   
-##GRÁFICOS:
+### Gráficos:
+
+**1) Queremos ver en las diferentes comunidades autónomas de España el rango de inaccesibilidad que se ha *producido.**
 
 Filtramos los datos que queremos (si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
 
@@ -349,8 +351,7 @@ group_by(`Comunidad autónoma`,`Sexo`)
 str(Datos_filtrados)
 ```
 
-**Hacemos el gráfico de barras:
-
+Hacemos el gráfico de barras:
 
 ```{r}
 library(forcats)
@@ -362,7 +363,7 @@ Datos_filtrados %>%
   drop_na() %>%
   ggplot(data = .,
        mapping = aes(x=reorder(`Comunidad autónoma`,-Total), y= Total)) +
-  geom_bar(stat='identity',fill =rainbow(19))+
+  geom_bar(stat='identity',fill =purple)+
   theme_classic()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
@@ -373,9 +374,20 @@ Resultado3
 ```
 
 
-##CONCLUSIONES:
+### Conclusiones:
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
 
+**2)Queremos ver las diferencias entre hombres y mujeres en cuanto a inaccesibilidada por transporte**
 
+Filtramos los datos que queremos (si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
+
+```{r } 
+Datos_filtrados2<-
+Inaccesibilidad_transporte %>%
+  filter(`Comunidad autónoma`!="Total Nacional" & `Sí o no` != "TOTAL" & `Sí o no` != "No" & `Sí o no` != "No necesitó asistencia" & `Sí o no` != "No consta",`Sexo` != "Hombres"&`Sexo` !="Mujeres")%>%
+group_by(`Comunidad autónoma`,`Sexo`)
+  
+str(Datos_filtrados2)
+```
