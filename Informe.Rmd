@@ -39,6 +39,9 @@ A través de este trabajo analizaremos algunos de los aspectos que actualmente d
 
 El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
 
+Vamos a abordar este tema, ya que nos parece que es uno de los problemas que concierne a la sociedad en la actualidad y que se ha intensificado por la pandemia. Por ejemplo, debido a la despoblación rural una parte de la población ha perdido la libertad de acudir al médico directamente en caso de necesidad por la reducción de horarios de visita y de personal sanitario, afectando principalmente a los más vulnerables.  
+
+
 Adjuntamos el link del [repositorio](<https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud>)
 
 ## **Objetivos**
