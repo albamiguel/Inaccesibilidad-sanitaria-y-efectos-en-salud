@@ -1,16 +1,39 @@
 ---
-title: "Presentación"
-author: "Lorena,Alba, Noelia"
-date: "30/11/2021"
+title: "Inaccesibilidad sanitara y efectos en salud"
+author: "Lorena González,Alba Miguel, Noelia Pérez"
+date: "13/12/2021"
 output: slidy_presentation
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
 
+
+## Introduccion
+
+## Objetivos
+
+## Metodología
+
+## Analisis de los datos
+
+## Inaccesibilidad por motivos económicos
+
+## Conclusion 1
+
+## Relación casos de muerte e inaccesibilidad.
+
+## Conclusion 2
+
+## Inaccesibilidad por dificultades en el transporte
+
+## Conclusion 3
+
+
+## Información por defecto (por si es útil)
 This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
