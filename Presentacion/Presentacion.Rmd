@@ -2,9 +2,16 @@
 title: "Inaccesibilidad sanitara y efectos en salud"
 author: "Lorena González,Alba Miguel, Noelia Pérez"
 date: "13/12/2021"
+
+
+
 output: slidy_presentation
 ---
+```{r, echo=FALSE, out.width="70%", fig.align = "center", fig.cap = 'Inaccesibilidad sanitaria'}
 
+knitr::include_graphics("/Inaccesibilidad.png")
+
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
