@@ -405,13 +405,16 @@ str(Datos_filtrados2)
 ```{r}
 Resultado4 <-
 Datos_filtrados2 %>%
-  drop_na() %>%
-  ggplot(data = .,aes(x=`Sexo`, y= Total, color= "Red")) +
-  geom_point()+
-  xlab(" ")+
-  ylab(" ")+
-  ggtitle("Inaccesibilidad por sexos")+
-  theme_minimal()
+drop_na() %>%
+ggplot(data=.,aes(x='Sexo',y=Total, fill =Sexo))+
+  geom_bar(stat = "identity",
+           color="white")+
+    geom_text(aes(label=Total),
+              position=position_stack(vjust=0.5),color="white",size=6)+
+  coord_polar(theta = "y")+
+  scale_fill_manual(values=c("salmon", "lightblue"))+
+    theme_void()+
+    labs(title="Inaccesibilidad por sexos")
 
 Resultado4
 ```
