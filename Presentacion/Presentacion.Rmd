@@ -120,13 +120,12 @@ Por comunidades autónomas de España
 Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
 
 
-## Metodología
-
-## Analisis de los datos
-
 ## Inaccesibilidad por motivos económicos
 
+
 ## Conclusion 1
+
+![](){width='100px'}
 
 ## Relación casos de muerte e inaccesibilidad.
 
@@ -138,11 +137,6 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 
 
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
 ## Slide with R Output
 
