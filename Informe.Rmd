@@ -1,33 +1,10 @@
 ---
 title: "Informe-Inaccesibilidad sanitaria y salud"
-author: "Lorena González, Alba Miguel, Noelia Pérez"
+author: "Lorena González Martínez, Alba Miguel Pastor, Noelia Pérez Gómez"
 date: "27/10/2021"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+<div style="text-align: justify">
 
 ## **Introducción**
 
@@ -96,7 +73,7 @@ Para trabajar con datos de Excel en R debemos usar un paquete desarrollado para 
 
 ### **RESOLUCIÓN ESPACIAL**:
 
-Por comunidades autónomas.
+Por comunidades autónomas de España. Está integrada por 17 Autonomías (Andalucía, Aragón, Asturias, Baleares, Canarias, Cantabria, Castilla la Mancha, Castilla y León, Cataluña, Comunidad Valenciana, Extremadura, Galicia, La Rioja, Madrid, Murcia, Navarra y País Vasco), cada una con su capital, más dos ciudades autónomas, Ceuta y Melilla, reconocidas así por sus propios estatutos.Las Comunidades Autónomas son, por tanto, divisiones territoriales con capacidad de administración y legislación y con competencia para ejecutar leyes.
 
 
 ### **POBLACIÓN**:
@@ -104,9 +81,7 @@ Por comunidades autónomas.
 Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
 
 
-### __HERRAMIENTAS UTILIZADAS__:
-
-### __DATOS__:
+### __HERRAMIENTAS UTILIZADAS__ $\rightarrow$ __DATOS__:
 
 ### **Inaccesibilidad por motivos económicos (por comunidad autónoma)**:
   
@@ -174,6 +149,8 @@ str(Datos_filtrados_economicos)
 
 ```
 
+### Gráfico:
+
 ```{r}
 Resultado1 <-
 Datos_filtrados_economicos %>% 
@@ -184,11 +161,14 @@ Datos_filtrados_economicos %>%
   theme_bw()+
   theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust=1))+
   theme(axis.text.y = element_text(angle = 0, vjust = 0, hjust=1))+
-  labs(title= "Inaccesibilidad por motivos economicos", x= " ", y= " ",fill="Tipos de atencion sanitaria")+
+  labs(title= "Inaccesibilidad por motivos económicos", x= " ", y= " ",fill="Tipos de atencion sanitaria")+
   scale_y_continuous(expand = expansion(mult = c(0, .1)))
   
 Resultado1
 ```
+
+### Conclusiones
+
 
 ### **Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)**: 
 
@@ -202,6 +182,8 @@ library(tidyverse)
 library(readxl)
 Muerte_inaccesibilidad <- read_excel("DATOS/Muerte_inaccesibilidad.xlsx")
 ```
+
+### Análisis de los datos 
 
 - Seleccionamos sólo aquellas variables que nos interesan: Total / Comunidad autónoma de residencia
 
@@ -277,6 +259,8 @@ Resultado_final <- Correlacion_muerte_inaccesibilidad %>%
 
 - Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
 
+### Gráfico
+
 ```{r } 
 Resultado_final %>% 
   drop_na() %>% 
@@ -287,8 +271,9 @@ Resultado_final %>%
        subtitle = "Correlación entre número de muertes e inaccesibilidad sanitaria") +
   theme_classic()
 ```
-  
-  
+
+### Conclusiones  
+
 ### **Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
 - Importamos el set de datos del INE de  Inaccesibilidad y dificultades de transporte agrupados por comunidad autónoma):
@@ -355,13 +340,10 @@ Inaccesibilidad_transporte %>%
 group_by(`Comunidad autónoma`,`Sexo`)
   
 str(Datos_filtrados)
+Datos_filtrados
 ```
 
 - Hacemos el gráfico de barras:
-
-```{r}
-library(forcats)
-```
 
 ```{r}
 Resultado3 <-
@@ -406,6 +388,7 @@ Inaccesibilidad_sexos %>%
 group_by(`Comunidad autónoma`, `Sexo`)
 
 str(Datos_filtrados2)
+Datos_filtrados2
 ```
 
 ```{r}
@@ -429,3 +412,5 @@ Resultado4
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por sexos. Podemos observar que hay una diferencia entre sexos. Las mujeres han sufrido mayor inaccesibilidad que los hombres.
+
+<div/>

@@ -2,34 +2,135 @@
 title: "Inaccesibilidad sanitara y efectos en salud"
 author: "Lorena González,Alba Miguel, Noelia Pérez"
 date: "13/12/2021"
-
-
-
 output: slidy_presentation
 ---
-```{r, echo=FALSE, out.width="70%", fig.align = "center", fig.cap = 'Inaccesibilidad sanitaria'}
 
+<<<<<<< HEAD
 knitr::include_graphics("Presentacion/Inaccesibilidad.png")
 
 ```
+=======
+\
+>>>>>>> ec937310817dee665b889600e2c526acd3a24c31
 
-```{r setup, include=FALSE}
+```{r setup, include= FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<center>
+<h1> Inaccesibilidad sanitara y efectos en salud
+</center>
 
+```{r, fig.align='center', out.width="400px"}
+library(knitr)
+include_graphics("Inaccesibilidad.png")
+```
+
+\
+
+<center>
+<h3> Lorena González,Alba Miguel, Noelia Pérez
+</center>
+
+
+## Indíce
+
+1. Introducción
+2. Objetivos
+  \
+  2.1. Objetivo general
+  \
+  2.2. Objetivos específicos
+3. Metodología
+  \
+  3.1. Procesamiento de datos
+  \
+  3.2. Descripción del set de datos
+  \
+  3.3. Resolución temporal
+  \
+  3.4. Resolución espacial
+  \
+  3.5. Pobación
+  \
+  3.6. Herramientas utilizadas: Datos
+  \
+    - 3.6.1. Análisis de datos
+    \
+    - 3.6.2. Gráficos
+    \
+    - 3.6.3. Conclusiones
+  
 
 ## Introduccion
 
+
+La **inaccesibilidad** se define como aquello que no está accesible, es decir, sin acceso o trato.
+
+A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
+
+El informe consta de diferentes partes. En primer lugar, presentaremos los objetivos. Después desarrollaremos la metodología que vamos a utilizar para abordar cada uno de ellos, y por último, incidiremos en la importación y el análisis de los datos,así como las correspondientes conclusiones.
+
+Vamos a abordar este tema, ya que nos parece que es uno de los problemas que concierne a la sociedad en la actualidad y que se ha intensificado por la pandemia.  
+
+
 ## Objetivos
+
+*OBJETIVO GENERAL*: Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
+
+*OBEJTIVOS ESPECÍFICOS*:
+
+-Inaccesibilidad por motivos económicos y comunidad autónoma
+
+-Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)
+
+-Inaccesibilidad y dificultades de transporte (por comunidad autónoma)
 
 ## Metodología
 
-## Analisis de los datos
+* **Procesamiento de datos**
+
+Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aqui](https://www.ine.es/index.htm)
+
+<div>
+<p style = 'text-align:center;'>
+<img src="https://www.ine.es/infografias/calidadvida/img/logoinecaja.jpg" alt="JuveYell" width="300px">
+</p>
+</div>
+
+
+## Metodología
+
+**Datos**: 
+
+- [Inaccesibilidad por motivos económicos](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05016.px&L=0)
+
+- [Defunciones por comunidad autónoma](https://www.ine.es/jaxi/Datos.htm?tpx=21856)
+
+- [Demora excesiva o inaccesibilidad a la asistencia médica](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p419/a2017/p02/l0/&file=05004.px&L=0)
+
+- [Inaccesibilidad por dificultades con el transporte](https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p02/l0/&file=05010.px&L=0)
+
+## Metodología
+
+* **Resolución temporal**
+\
+Últimos 12 meses del año 2020.
+
+* **Resolución espacial**
+\
+Por comunidades autónomas de España
+
+* **Población**
+\
+Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
+
 
 ## Inaccesibilidad por motivos económicos
 
+
 ## Conclusion 1
+
 
 ## Relación casos de muerte e inaccesibilidad.
 
@@ -40,16 +141,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Conclusion 3
 
 
-## Información por defecto (por si es útil)
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
 ## Slide with R Output
 
