@@ -125,7 +125,6 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ## Conclusion 1
 
-![](){width='100px'}
 
 ## Relación casos de muerte e inaccesibilidad.
 
