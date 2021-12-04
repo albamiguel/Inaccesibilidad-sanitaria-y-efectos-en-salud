@@ -9,7 +9,7 @@ output: slidy_presentation
 ---
 ```{r, echo=FALSE, out.width="70%", fig.align = "center", fig.cap = 'Inaccesibilidad sanitaria'}
 
-knitr::include_graphics("/Inaccesibilidad.png")
+knitr::include_graphics("Presentacion/Inaccesibilidad.png")
 
 ```
 
