@@ -1,6 +1,6 @@
 ---
 title: "Informe-Inaccesibilidad sanitaria y salud"
-author: "Lorena González, Alba Miguel, Noelia Pérez"
+author: "Lorena González Martínez, Alba Miguel Pastor, Noelia Pérez Gómez"
 date: "27/10/2021"
 output: html_document
 ---
@@ -355,13 +355,10 @@ Inaccesibilidad_transporte %>%
 group_by(`Comunidad autónoma`,`Sexo`)
   
 str(Datos_filtrados)
+Datos_filtrados
 ```
 
 - Hacemos el gráfico de barras:
-
-```{r}
-library(forcats)
-```
 
 ```{r}
 Resultado3 <-
@@ -406,6 +403,7 @@ Inaccesibilidad_sexos %>%
 group_by(`Comunidad autónoma`, `Sexo`)
 
 str(Datos_filtrados2)
+Datos_filtrados2
 ```
 
 ```{r}
