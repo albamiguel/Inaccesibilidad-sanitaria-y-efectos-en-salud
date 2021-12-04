@@ -125,7 +125,6 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ## Conclusion 1
 
-![](https://github.com/albamiguel/Inaccesibilidad-sanitaria-y-efectos-en-salud/blob/c99d39b28b06802e6418f99024f7e16914c98d06/Fotos/Economico.PNG){width='100px'}
 
 ## Relación casos de muerte e inaccesibilidad.
 
