@@ -274,6 +274,10 @@ Resultado_final %>%
 
 ### Conclusiones  
 
+En el gráfico anterior se muestra la relación entre la inaccesibilidad a la asistencia sanitaria y el total de defunciones por comunidad autónoma. 
+En un principio creíamos que en aquellas comunidades en las que hay una mayor inaccesibilidad sanitaria, la tasa de mortalidad también sería mayor. Sin embargo, tal como muestra el box-plot, la inaccesibilidad parece no ser un determinante, o al menos no en gran medida, sobre el total de muertes que se producen a nivel nacional. 
+
+
 ### **Inaccesibilidad y dificultades de transporte (por comunidad autónoma)**:
   
 - Importamos el set de datos del INE de  Inaccesibilidad y dificultades de transporte agrupados por comunidad autónoma):
@@ -367,7 +371,7 @@ Resultado3
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
 
-**2) Queremos comparar la inaccesibilidad causada por trasnporte entre hombres y mujeres en el total nacional**
+**2) Queremos comparar la inaccesibilidad causada por transporte entre hombres y mujeres en el total nacional**
 
 - Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
 
