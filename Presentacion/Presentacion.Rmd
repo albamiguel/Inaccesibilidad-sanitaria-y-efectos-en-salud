@@ -134,6 +134,8 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ## Relación casos de muerte e inaccesibilidad.
 
+Total de defunciones por comunidad autónoma:
+
 ## Conclusion 2
 
 ## Inaccesibilidad por dificultades en el transporte
