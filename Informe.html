@@ -451,7 +451,8 @@ Muerte_inaccesibilidad &lt;- read_excel(&quot;DATOS/Muerte_inaccesibilidad.xlsx&
 Muerte_inaccesibilidad %&gt;%
   select(`Comunidad autónoma de residencia del fallecido`, Total_muertes = Total) %&gt;% 
   filter(`Comunidad autónoma de residencia del fallecido` != &quot;Total&quot;) %&gt;% 
-  filter(`Comunidad autónoma de residencia del fallecido` != &quot;Extranjero&quot;)</code></pre>
+  filter(`Comunidad autónoma de residencia del fallecido` != &quot;Extranjero&quot;)
+View(Muerte_inaccesibilidad1)</code></pre>
 <ul>
 <li>Vista general:</li>
 </ul>
@@ -566,6 +567,7 @@ Muerte_inaccesibilidad1 %&gt;%
 </div>
 <div id="conclusiones-1" class="section level3">
 <h3>Conclusiones</h3>
+<p>En el gráfico anterior se muestra la relación entre la inaccesibilidad a la asistencia sanitaria y el total de defunciones por comunidad autónoma. En un principio creíamos que en aquellas comunidades en las que hay una mayor inaccesibilidad sanitaria, la tasa de mortalidad también sería mayor. Sin embargo, tal como muestra el box-plot, la inaccesibilidad parece no ser un determinante, o al menos no en gran medida, sobre el total de muertes que se producen a nivel nacional.</p>
 </div>
 <div id="inaccesibilidad-y-dificultades-de-transporte-por-comunidad-autónoma" class="section level3">
 <h3><strong>Inaccesibilidad y dificultades de transporte (por comunidad autónoma)</strong>:</h3>
@@ -741,7 +743,7 @@ Resultado3</code></pre>
 <div id="conclusiones-2" class="section level3">
 <h3>Conclusiones:</h3>
 <p>En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia. La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.</p>
-<p><strong>2) Queremos comparar la inaccesibilidad causada por trasnporte entre hombres y mujeres en el total nacional</strong></p>
+<p><strong>2) Queremos comparar la inaccesibilidad causada por transporte entre hombres y mujeres en el total nacional</strong></p>
 <ul>
 <li>Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo</li>
 </ul>
