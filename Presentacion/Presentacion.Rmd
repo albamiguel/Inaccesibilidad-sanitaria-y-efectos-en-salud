@@ -80,6 +80,11 @@ Vamos a abordar este tema, ya que nos parece que es uno de los problemas que con
 
 -Inaccesibilidad y dificultades de transporte (por comunidad autónoma)
 
+```{r, fig.align='center', out.width="350px"}
+library(knitr)
+include_graphics("barreras_salud.jpg")
+```
+
 ## Metodología
 
 * **Procesamiento de datos**
