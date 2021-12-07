@@ -45,7 +45,7 @@ include_graphics("Inaccesibilidad.png")
   \
   3.4. Resolución espacial
   \
-  3.5. Pobación
+  3.5. Población
   \
   3.6. Herramientas utilizadas: Datos
   \
@@ -128,9 +128,23 @@ Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set 
 
 ## Relación casos de muerte e inaccesibilidad.
 
-Total de defunciones por comunidad autónoma:
+Tras realizar el full join empleando como pivote la variable "Comunidad Autónoma" obtenemos:
+
+```{r, fig.align='center', out.width="400px"}
+library(knitr)
+include_graphics("Correlación_muerte_inaccesibilidad.PNG")
+```
 
 ## Conclusion 2
+
+En el gráfico se muestra la relación entre la inaccesibilidad a la asistencia sanitaria y el total de defunciones por comunidad autónoma. 
+En un principio creíamos que en aquellas comunidades en las que hay una mayor inaccesibilidad sanitaria, la tasa de mortalidad también sería mayor. Sin embargo, tal como muestra el box-plot, la inaccesibilidad parece no ser un determinante, o al menos no en gran medida, sobre el total de muertes que se producen a nivel nacional. 
+
+
+```{r, fig.align='center', out.width="600px"}
+library(knitr)
+include_graphics("conclusion2.PNG")
+```
 
 ## Inaccesibilidad por dificultades en el transporte
 
