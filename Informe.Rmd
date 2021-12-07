@@ -1,5 +1,5 @@
 ---
-title: "Informe-Inaccesibilidad sanitaria y salud"
+title: "Inaccesibilidad sanitaria y salud"
 author: "Lorena González Martínez, Alba Miguel Pastor, Noelia Pérez Gómez"
 date: "27/10/2021"
 output: html_document
@@ -31,7 +31,7 @@ Adjuntamos el link del [repositorio](<https://github.com/albamiguel/Inaccesibili
 
 -Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)
 
--Inaccesibilidad y dificultades de transporte (por comunidad autónoma)
+-Inaccesibilidad y dificultades de transporte (por comunidad autónoma y por sexos)
 
 ## **Metodología**
 
@@ -333,7 +333,7 @@ Inaccesibilidad_transporte
   
 ### Gráficos:
 
-**1) Queremos ver en las diferentes comunidades autónomas de España el rango de inaccesibilidad que se ha *producido.**
+**1) Queremos ver en las diferentes comunidades autónomas de España el rango de inaccesibilidad que se ha producido.**
 
 - Filtramos los datos que queremos (si han sufrido inaccesibilidad) y agrupamos las Comunidades autónomas
 
@@ -369,8 +369,9 @@ Resultado3
 ### Conclusiones:
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
-La comparación que hemos realizado es por comunidades autónomas. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, en cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.
+La comparación que hemos realizado es por comunidades autónomas y hemos ordenado en el eje X, teniendo en cuenta los valores de mayor a menor del eje Y. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, seguida de la Comunidad Vañenciana. En cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.Además les siguen de cerca Murcia, Asturias y la Rioja. En el medio con valores medios nos encontramos por ejemplo a País Vasco, Castilla Y León y Madrid.
 
+\
 **2) Queremos comparar la inaccesibilidad causada por transporte entre hombres y mujeres en el total nacional**
 
 - Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma/Sexo
@@ -415,6 +416,10 @@ Resultado4
 ### Conclusiones:
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
-La comparación que hemos realizado es por sexos. Podemos observar que hay una diferencia entre sexos. Las mujeres han sufrido mayor inaccesibilidad que los hombres.
+\
+La comparación que hemos realizado es por sexos, es decirm entre hombres y mujeres. Podemos observar que hay una diferencia entre sexos notable, las mujeres han sufrido mayor inaccesibilidad que los hombres, un un total de 247.2 frente al de los hombres de 162,4.
+Nos imaginabamos que saldria una diferencia, pero no nos esperabamos que fuera tan grande. 
+\
+En conclusión, este podría ser un ejemplo de nuestra sociedad donde una vez más los datos muestran como las mujeres sufren un grado de exclusión mayor. Tal vez, los resultados de este estudio pueden ser un punto de partida para el desarrollo de políticas sanitarias y de protocolos institucionales más igualitarios para todo el mundo.
 
 <div/>
