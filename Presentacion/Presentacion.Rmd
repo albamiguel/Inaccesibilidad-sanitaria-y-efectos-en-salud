@@ -153,9 +153,22 @@ include_graphics("conclusion2.PNG")
 
 ## Inaccesibilidad por dificultades en el transporte
 
+En primer lugar estudiamos el rango de inaccesibilidad sanitaria o demora excesiva producido por dificultades en el transporte, en función de la comunidad autónoma.
+
+```{r, fig.align='center', out.width="500px"}
+library(knitr)
+include_graphics("Datos_filtrados3.PNG")
+```
+
 ## Conclusion 3
 
+En el gráfico se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
+La comparación que hemos realizado es por comunidades autónomas y hemos ordenado en el eje X, teniendo en cuenta los valores de mayor a menor del eje Y. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, seguida de la Comunidad Vañenciana. En cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.Además les siguen de cerca Murcia, Asturias y la Rioja. En el medio con valores medios nos encontramos por ejemplo a País Vasco, Castilla Y León y Madrid.
 
+```{r, fig.align='center', out.width="500px"}
+library(knitr)
+include_graphics("Conclusion3.1.PNG")
+```
 
 
 ## Slide with R Output
