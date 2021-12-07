@@ -23,7 +23,9 @@ Adjuntamos el link del [repositorio](<https://github.com/albamiguel/Inaccesibili
 
 ## **Objetivos**
 
-*OBJETIVO GENERAL*: Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
+*OBJETIVO GENERAL*:
+
+Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
 
 *OBEJTIVOS ESPECÍFICOS*:
 
@@ -254,7 +256,6 @@ table(Correlacion_muerte_inaccesibilidad$`Sí o no`)
 Resultado_final <- Correlacion_muerte_inaccesibilidad %>% 
   mutate(`Sí o no` = factor(`Sí o no`, labels = c("No", "No", "Sí", "Total"))) %>% 
   filter(`Sí o no` != "Total")
-  
 ```
 
 - Finalmente, eliminamos los valores NA, para que no afecten a nuestro resultado final y obtenemos el box-plot que relaciona el número total de muertes y la inaccesibilidad sanitaria por comunidad autónoma:
@@ -417,7 +418,7 @@ Resultado4
 
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 \
-La comparación que hemos realizado es por sexos, es decirm entre hombres y mujeres. Podemos observar que hay una diferencia entre sexos notable, las mujeres han sufrido mayor inaccesibilidad que los hombres, un un total de 247.2 frente al de los hombres de 162,4.
+La comparación que hemos realizado es por sexos, es decir, entre hombres y mujeres. Podemos observar que hay una diferencia entre sexos notable, las mujeres han sufrido mayor inaccesibilidad que los hombres, un un total de 247.2 frente al de los hombres de 162,4.
 Nos imaginabamos que saldria una diferencia, pero no nos esperabamos que fuera tan grande. 
 \
 En conclusión, este podría ser un ejemplo de nuestra sociedad donde una vez más los datos muestran como las mujeres sufren un grado de exclusión mayor. Tal vez, los resultados de este estudio pueden ser un punto de partida para el desarrollo de políticas sanitarias y de protocolos institucionales más igualitarios para todo el mundo.

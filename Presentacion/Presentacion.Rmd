@@ -1,17 +1,16 @@
 ---
-title: "Inaccesibilidad sanitara y efectos en salud"
-author: "Lorena González,Alba Miguel, Noelia Pérez"
+title: "Inaccesibilidad sanitaria y efectos en salud"
+author: "Lorena González, Alba Miguel, Noelia Pérez"
 date: "13/12/2021"
 output: slidy_presentation
 ---
-
 
 ```{r setup, include= FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <center>
-<h1> Inaccesibilidad sanitara y efectos en salud
+<h1> Inaccesibilidad sanitaria y efectos en salud
 </center>
 
 ```{r, fig.align='center', out.width="400px"}
@@ -22,12 +21,12 @@ include_graphics("Inaccesibilidad.png")
 \
 
 <center>
-<h3> Lorena González,Alba Miguel, Noelia Pérez
+<h3> Lorena González, Alba Miguel, Noelia Pérez
 </center>
 
 
 
-## Indíce
+## Índice
 
 1. Introducción
 2. Objetivos
@@ -56,7 +55,7 @@ include_graphics("Inaccesibilidad.png")
     - 3.6.3. Conclusiones
   
 
-## Introduccion
+## Introducción
 
 
 La **inaccesibilidad** se define como aquello que no está accesible, es decir, sin acceso o trato.
@@ -70,15 +69,17 @@ Vamos a abordar este tema, ya que nos parece que es uno de los problemas que con
 
 ## Objetivos
 
-*OBJETIVO GENERAL*: Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
+*OBJETIVO GENERAL*: 
+
+Comprobar la relación entre la inaccesibilidad a la sanidad y los efectos que puede provocar en la salud humana.
 
 *OBEJTIVOS ESPECÍFICOS*:
 
--Inaccesibilidad por motivos económicos y comunidad autónoma
+-Inaccesibilidad por motivos económicos y comunidad autónoma.
 
--Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)
+-Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma).
 
--Inaccesibilidad y dificultades de transporte (por comunidad autónoma)
+-Inaccesibilidad y dificultades de transporte (por comunidad autónoma).
 
 ```{r, fig.align='center', out.width="350px"}
 library(knitr)
@@ -89,7 +90,7 @@ include_graphics("barreras_salud.jpg")
 
 * **Procesamiento de datos**
 
-Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aqui](https://www.ine.es/index.htm)
+Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aquí](https://www.ine.es/index.htm)
 
 <div>
 <p style = 'text-align:center;'>
@@ -116,60 +117,118 @@ Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El I
 \
 Últimos 12 meses del año 2020.
 
+
 * **Resolución espacial**
 \
-Por comunidades autónomas de España
+Por comunidades autónomas de España.
+
 
 * **Población**
 \
-Personas de 15 o más años, tanto hombres como mujeres, expecto en el data set de defunciones por comunidad autónoma, que entran todos los rangos de edad.
+Personas de 15 o más años, tanto hombres como mujeres, excepto en el set de datos de defunciones por comunidad autónoma, que incluye todos los rangos de edad.
+
+## Metodología
+* **Herramientas utilizadas**
+
+**Inaccesibilidad por motivos económicos**
+
+Tras filtrar los datos de inaccesibilidad sanitaria por motivos económicos agrupando por comunidad autónoma y tipo de atención médica obtenemos:
 
 
-## Inaccesibilidad por motivos económicos
+```{r, fig.align='center', out.width="500px"}
+library(knitr)
+include_graphics("datos_filtrados_economicos.PNG")
+```
 
+## Metodología
+* **Herramientas utilizadas**
 
-## Conclusion 1
+**Conclusión 1**
 
+## Metodología
+* **Herramientas utilizadas**
 
-## Relación casos de muerte e inaccesibilidad.
+**Relación casos de muerte e inaccesibilidad.**
 
 Tras realizar el full join empleando como pivote la variable "Comunidad Autónoma" obtenemos:
 
-```{r, fig.align='center', out.width="400px"}
+```{r, fig.align='center', out.width="380px"}
 library(knitr)
 include_graphics("Correlación_muerte_inaccesibilidad.PNG")
 ```
 
-## Conclusion 2
+## Metodología
+
+* **Herramientas utilizadas**
+
+**Conclusión 2**
 
 En el gráfico se muestra la relación entre la inaccesibilidad a la asistencia sanitaria y el total de defunciones por comunidad autónoma. 
 En un principio creíamos que en aquellas comunidades en las que hay una mayor inaccesibilidad sanitaria, la tasa de mortalidad también sería mayor. Sin embargo, tal como muestra el box-plot, la inaccesibilidad parece no ser un determinante, o al menos no en gran medida, sobre el total de muertes que se producen a nivel nacional. 
 
 
-```{r, fig.align='center', out.width="600px"}
+```{r, fig.align='center', out.width="650px"}
 library(knitr)
 include_graphics("conclusion2.PNG")
 ```
 
-## Inaccesibilidad por dificultades en el transporte
+## Metodología
+* **Herramientas utilizadas**
 
-En primer lugar estudiamos el rango de inaccesibilidad sanitaria o demora excesiva producido por dificultades en el transporte, en función de la comunidad autónoma.
+**Inaccesibilidad por dificultades en el transporte según la comunidad autónoma.**
 
-```{r, fig.align='center', out.width="500px"}
+En primer lugar, estudiamos el rango de inaccesibilidad sanitaria o demora excesiva producido por dificultades en el transporte, en función de la comunidad autónoma.
+
+```{r, fig.align='center', out.width="380px"}
 library(knitr)
 include_graphics("Datos_filtrados3.PNG")
 ```
 
-## Conclusion 3
+## Metodología
+* **Herramientas utilizadas**
+
+**Conclusión 3.1**
 
 En el gráfico se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
 La comparación que hemos realizado es por comunidades autónomas y hemos ordenado en el eje X, teniendo en cuenta los valores de mayor a menor del eje Y. Las conclusiones que podemos sacar son las siguientes: la comunidad que más ha sufrido es Andalucía, seguida de la Comunidad Vañenciana. En cambio, las que menos Cantabria y las ciudades de Ceuta y Melilla.Además les siguen de cerca Murcia, Asturias y la Rioja. En el medio con valores medios nos encontramos por ejemplo a País Vasco, Castilla Y León y Madrid.
 
-```{r, fig.align='center', out.width="500px"}
+```{r, fig.align='center', out.width="700px"}
 library(knitr)
 include_graphics("Conclusion3.1.PNG")
 ```
 
+## Metodología
+* **Herramientas utilizadas**
+
+**Inaccesibilidad por dificultades en el transporte según la comunidad autónoma.**
+
+En segundo lugar, estudiamos el rango de inaccesibilidad sanitaria o demora excesiva producido por dificultades en el transporte, en función del sexo.
+```{r, fig.align='center', out.width="340px"}
+library(knitr)
+include_graphics("inaccesibilidad_transporte_sexo.PNG")
+```
+
+```{r, fig.align='center', out.width="240px"}
+library(knitr)
+include_graphics("datos_filtrados_3.2.PNG")
+```
+
+## Metodología
+* **Herramientas utilizadas**
+
+**Conclusión 3.2**
+
+En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad o demora excesiva a la asistencia sanitaria debido al transporte o la distancia.
+\
+La comparación que hemos realizado es por sexos, es decir, entre hombres y mujeres. Podemos observar que hay una diferencia entre sexos notable, las mujeres han sufrido mayor inaccesibilidad que los hombres, un un total de 247.2 frente al de los hombres de 162,4.
+Nos imaginabamos que saldria una diferencia, pero no nos esperabamos que fuera tan grande. 
+\
+En conclusión, este podría ser un ejemplo de nuestra sociedad donde una vez más los datos muestran como las mujeres sufren un grado de exclusión mayor. Tal vez, los resultados de este estudio pueden ser un punto de partida para el desarrollo de políticas sanitarias y de protocolos institucionales más igualitarios para todo el mundo.
+
+```{r, fig.align='center', out.width="500px"}
+library(knitr)
+include_graphics("conclusion3.2.PNG")
+```
 
 ## Slide with R Output
 
