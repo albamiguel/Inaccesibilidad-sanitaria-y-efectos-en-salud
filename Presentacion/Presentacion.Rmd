@@ -5,13 +5,6 @@ date: "13/12/2021"
 output: slidy_presentation
 ---
 
-<<<<<<< HEAD
-knitr::include_graphics("Presentacion/Inaccesibilidad.png")
-
-```
-=======
-\
->>>>>>> ec937310817dee665b889600e2c526acd3a24c31
 
 ```{r setup, include= FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -31,6 +24,7 @@ include_graphics("Inaccesibilidad.png")
 <center>
 <h3> Lorena González,Alba Miguel, Noelia Pérez
 </center>
+
 
 
 ## Indíce
