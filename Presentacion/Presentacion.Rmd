@@ -141,9 +141,20 @@ include_graphics("datos_filtrados_economicos.PNG")
 ```
 
 ## Metodología
-* **Herramientas utilizadas**
+**Herramientas utilizadas**
 
 **Conclusión 1**
+En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad  a la asistencia sanitaria por motivos económicos.
+
+Hemos realizado la comparación por Comunidades Autónomas por orden alfabético y en el eje y, el total de los datos. Hemos gráficado segun los tres tipos de asistencia sanitaria: La atención dental (rosa), la atención médica (verde) y la salud mental (azul), por lo que para cada una de las comunidades autonomas vamos a obtener tres barras.
+
+Podemos obtener estas conclusiones, respecto a la salud dental destaca la Comunidad Valenciana seguida de Cataluña, en la salud médica tenemos que destacar a las Islas Canarias junto a Extremadura como las Comunidades que más han sufrido inaccesibilidad por este motivo. Y finalmente hablando de la salud mental, las Comunidades que han sufrido una mayor inaccesibilidad sanitaria son Andalucía y Cataluña.
+
+```{r, fig.align='center', out.width="650px"}
+library(knitr)
+include_graphics("conclusion1.PNG")
+```
+
 
 ## Metodología
 * **Herramientas utilizadas**
