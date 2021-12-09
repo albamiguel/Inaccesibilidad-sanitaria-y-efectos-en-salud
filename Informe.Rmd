@@ -1,5 +1,5 @@
 ---
-title: "Inaccesibilidad sanitaria y salud"
+title: "Inaccesibilidad sanitaria y efectos en la salud"
 author: "Lorena González Martínez, Alba Miguel Pastor, Noelia Pérez Gómez"
 date: "27/10/2021"
 output: html_document
