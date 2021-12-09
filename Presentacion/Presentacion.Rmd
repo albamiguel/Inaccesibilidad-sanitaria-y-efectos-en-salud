@@ -8,12 +8,14 @@ output: slidy_presentation
 ```{r setup, include= FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
+\
 <center>
 <h1> Inaccesibilidad sanitaria y efectos en salud
 </center>
 
-```{r, fig.align='center', out.width="400px"}
+\
+
+```{r, fig.align='center', out.width="600px"}
 library(knitr)
 include_graphics("Inaccesibilidad.png")
 ```
@@ -57,7 +59,6 @@ include_graphics("Inaccesibilidad.png")
 
 ## Introducción
 
-
 La **inaccesibilidad** se define como aquello que no está accesible, es decir, sin acceso o trato.
 
 A través de este trabajo analizaremos algunos de los aspectos que actualmente desencadenan situaciones de inaccesibilidad en las distintas comunidades autónomas de España. Entre otros, la inaccesibilidad por dificultades económicas o de transporte.
@@ -92,6 +93,7 @@ include_graphics("barreras_salud.jpg")
 
 Hemos extraído los datos del **Instituto Nacional de Estadística (INE)**. El INE es un organismo autónomo de carácter administrativo, con personalidad jurídica y patrimonio propio, adscrito al Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Economía y Apoyo a la Empresa.Ver [aquí](https://www.ine.es/index.htm)
 
+\
 <div>
 <p style = 'text-align:center;'>
 <img src="https://www.ine.es/infografias/calidadvida/img/logoinecaja.jpg" alt="JuveYell" width="300px">
@@ -144,13 +146,14 @@ include_graphics("datos_filtrados_economicos.PNG")
 **Herramientas utilizadas**
 
 **Conclusión 1**
+
 En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad  a la asistencia sanitaria por motivos económicos.
 
 Hemos realizado la comparación por Comunidades Autónomas por orden alfabético y en el eje y, el total de los datos. Hemos gráficado segun los tres tipos de asistencia sanitaria: La atención dental (rosa), la atención médica (verde) y la salud mental (azul), por lo que para cada una de las comunidades autonomas vamos a obtener tres barras.
 
 Podemos obtener estas conclusiones, respecto a la salud dental destaca la Comunidad Valenciana seguida de Cataluña, en la salud médica tenemos que destacar a las Islas Canarias junto a Extremadura como las Comunidades que más han sufrido inaccesibilidad por este motivo. Y finalmente hablando de la salud mental, las Comunidades que han sufrido una mayor inaccesibilidad sanitaria son Andalucía y Cataluña.
 
-```{r, fig.align='center', out.width="650px"}
+```{r, fig.align='center', out.width="600px"}
 library(knitr)
 include_graphics("conclusion1.PNG")
 ```
@@ -239,17 +242,5 @@ En conclusión, este podría ser un ejemplo de nuestra sociedad donde una vez m�
 ```{r, fig.align='center', out.width="500px"}
 library(knitr)
 include_graphics("conclusion3.2.PNG")
-```
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
 ```
 
