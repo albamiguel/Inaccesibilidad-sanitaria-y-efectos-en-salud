@@ -126,7 +126,7 @@ summary(Inaccesibilidad_por_motivos_economicos)
 
 - **Si o No**: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
 
-- **Total**: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta. 
+- **Total**: compuesto por 1200 elementos clase numerica. Es el recuento total de cada variable distinta. 
 
 
 ```{r } 
@@ -323,7 +323,7 @@ summary(Inaccesibilidad_y_dificultades_de_transporte)
 
 - **Si o No**: compuesto por 300 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron  inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.
 
-- **Total**: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta. 
+- **Total**: compuesto por 300 elementos clase numerica. Es el recuento total de cada variable distinta. 
 
 ```{r } 
 library(tidyverse)
