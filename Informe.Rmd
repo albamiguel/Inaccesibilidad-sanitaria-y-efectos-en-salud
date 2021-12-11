@@ -133,7 +133,7 @@ summary(Inaccesibilidad_por_motivos_economicos)
 library(tidyverse)
 ```
 
-- Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma
+- Seleccionamos sólo aquellas variables que nos interesan: Sí o no / Total/ Comunidad autónoma / Tipos de atención sanitaria / Sexo
 
 ```{r } 
 Inaccesibilidad_m_economicos <-  
