@@ -303,12 +303,12 @@ pre code {
 <li><p><strong>Comunidad autonónoma</strong>: compuesto por 1200 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).</p></li>
 <li><p><strong>Tipos atención sanitaria</strong>: compuesto por 1200 elementos, de clase caracter.Encontramos distintos tipos de atención sanitaria, que puede ser atencion medica,dental, medicamento recetado,atencion salud mental,</p></li>
 <li><p><strong>Si o No</strong>: compuesto por 1200 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.</p></li>
-<li><p><strong>Total</strong>: compuesto por 1200 elementos clase caracter. Es el recuento total de cada variable distinta.</p></li>
+<li><p><strong>Total</strong>: compuesto por 1200 elementos clase numerica. Es el recuento total de cada variable distinta.</p></li>
 </ul>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</code></pre>
 <pre><code>## v ggplot2 3.3.5     v dplyr   1.0.7
-## v tibble  3.1.4     v stringr 1.4.0
+## v tibble  3.1.5     v stringr 1.4.0
 ## v tidyr   1.1.4     v forcats 0.5.1
 ## v purrr   0.3.4</code></pre>
 <pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
@@ -435,7 +435,7 @@ Resultado1</code></pre>
 <h3>Conclusiones</h3>
 <p>En el gráfico anterior se muestran las personas que han sufrido inaccesibilidad a la asistencia sanitaria por motivos económicos.</p>
 <p>Hemos realizado la comparación por Comunidades Autónomas por orden alfabético y en el eje y, el total de los datos. Hemos gráficado segun los tres tipos de asistencia sanitaria: La atención dental (rosa), la atención médica (verde) y la salud mental (azul), por lo que para cada una de las comunidades autonomas vamos a obtener tres barras.</p>
-<p>Podemos obtener estas conclusiones, respecto a la salud dental destaca la Comunidad Valenciana seguida de Cataluña, en la salud médica tenemos que destacar a las Islas Canarias junto a Extremadura como las Comunidades que más han sufrido inaccesibilidad por este motivo. Y finalmente hablando de la salud mental, las Comunidades que han sufrido una mayor inaccesibilidad sanitaria son Andalucía y Cataluña. Cabe destacar a Ceuta donde no encontramos</p>
+<p>Podemos obtener estas conclusiones, respecto a la salud dental destaca la Comunidad Valenciana seguida de Cataluña, en la salud médica tenemos que destacar a las Islas Canarias junto a Extremadura como las Comunidades que más han sufrido inaccesibilidad por este motivo. Y finalmente hablando de la salud mental, las Comunidades que han sufrido una mayor inaccesibilidad sanitaria son Andalucía y Cataluña. Cabe destacar a Ceuta podemos decir que no sufre inacccesibilidad en ninguno de los tipos de atención sanitaria</p>
 </div>
 <div id="relación-entre-los-casos-de-muerte-y-la-inaccesibilidad-por-comunidad-autónoma" class="section level3">
 <h3><strong>Relación entre los casos de muerte y la inaccesibilidad (por comunidad autónoma)</strong>:</h3>
@@ -633,7 +633,7 @@ Inaccesibilidad_y_dificultades_de_transporte &lt;- read_csv2(&quot;DATOS/Inacces
 <li><p><strong>Sexo</strong>: compuesto por 300 elementos, clase caracter. Pueden ser hombres, mujeres o ambos sexos.</p></li>
 <li><p><strong>Comunidad autonónoma</strong>: compuesto por 300 elementos, clase caracter. Dividido por el total nacional y las diferentes comunidades autonomas (Andalucia, Aragón, Asturias, Islas Baleares, Canarias, Cantabria, Castilla y León, Castilla la Mancha, Cataluña,Comunitat Valenciana, Extremadura, Galicia, Madrid, Región de Murcia, Comunidad Foral de Navarra, País Vasco, La Rioja, Cueuta, Melilla).</p></li>
 <li><p><strong>Si o No</strong>: compuesto por 300 elementos, clase caracter. Muestra cuantas personas participaron en la encuesta, el total esta divididos en las personas que SI sufrieron inaccsesibilidad, quienes NO, las personas que no necesitaron asistencia y por último las que no constan.</p></li>
-<li><p><strong>Total</strong>: compuesto por 300 elementos clase caracter. Es el recuento total de cada variable distinta.</p></li>
+<li><p><strong>Total</strong>: compuesto por 300 elementos clase numerica. Es el recuento total de cada variable distinta.</p></li>
 </ul>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <ul>
